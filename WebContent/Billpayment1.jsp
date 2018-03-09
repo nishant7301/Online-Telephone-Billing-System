@@ -58,12 +58,15 @@ function checkForm()
                                           float amount = 0.0f;
                                         
                                         
-                                          String plan= request.getParameter("radioButtonDataTopup");
+                                          String plan_topup= request.getParameter("radioButtonDataTopup");
+                                          String plan_2g3g= request.getParameter("radioButtonData2G3G");
+                                          String plan_specailoffer= request.getParameter("radioButtonDataSpecialOffer");
+                                          String plan_fulltalktime= request.getParameter("radioButtonDataFullTalktime");
+                                                                                 
                                           
-                                          int id_plan  = 0;
-                                          out.println(id_plan); 
-                                          if(plan != null){
-                                        	   id_plan = Integer.parseInt(plan.trim());
+                                           
+                                          if(plan_topup != null){
+                                        	   int id_plan = Integer.parseInt(plan_topup.trim());
                                                 Statement s = con.createStatement();
                                                 ResultSet r1 = st.executeQuery("select * from topup");
                                                 
@@ -79,6 +82,61 @@ function checkForm()
                                                     }
                                                 }
                                           }
+                                          else if(plan_2g3g != null){
+                                       	   int id_plan = Integer.parseInt(plan_2g3g.trim());
+                                               Statement s = con.createStatement();
+                                               ResultSet r1 = st.executeQuery("select * from 2g_3g");
+                                               
+                                               while(r1.next())
+                                               {
+                                                   int id = r1.getInt("id1");
+                                                   float amo = r1.getFloat("Amount");
+                                                   
+                                                   if(id == id_plan)
+                                                   {
+                                                   	amount = amo;
+                                                   	
+                                                   }
+                                               }
+                                         }
+                                          else if(plan_specailoffer != null){
+                                          	   int id_plan = Integer.parseInt(plan_specailoffer.trim());
+                                                  Statement s = con.createStatement();
+                                                  ResultSet r1 = st.executeQuery("select * from specialoffer");
+                                                  
+                                                  while(r1.next())
+                                                  {
+                                                      int id = r1.getInt("id2");
+                                                      float amo = r1.getFloat("Amount");
+                                                      
+                                                      if(id == id_plan)
+                                                      {
+                                                      	amount = amo;
+                                                      	
+                                                      }
+                                                  }
+                                            }
+                                          else if(plan_fulltalktime != null){
+                                         	   int id_plan = Integer.parseInt(plan_fulltalktime.trim());
+                                                 Statement s = con.createStatement();
+                                                 ResultSet r1 = st.executeQuery("select * from full_talktime");
+                                                 
+                                                 while(r1.next())
+                                                 {
+                                                     int id = r1.getInt("id3");
+                                                     float amo = r1.getFloat("Amount");
+                                                     
+                                                     if(id == id_plan)
+                                                     {
+                                                     	amount = amo;
+                                                     	
+                                                     }
+                                                 }
+                                           }
+                                        
+
+                                             
+                                          
                                           %> Enter money <input  name="money"  value = "<% out.print(amount);%>" ><a href ="browsePlan.jsp">Browse Plan</a>
                                           <%
                                          
