@@ -58,15 +58,28 @@ function checkForm()
                                           float amount = 0.0f;
                                         
                                         
-                                          String plan= request.getParameter("radioButtonDataTopUp");
+                                          String plan= request.getParameter("radioButtonDataTopup");
                                           
                                           int id_plan  = 0;
+                                          out.println(id_plan); 
                                           if(plan != null){
                                         	   id_plan = Integer.parseInt(plan.trim());
-                                              out.println(id_plan); 
-                                              
+                                                Statement s = con.createStatement();
+                                                ResultSet r1 = st.executeQuery("select * from topup");
+                                                
+                                                while(r1.next())
+                                                {
+                                                    int id = r1.getInt("id");
+                                                    float amo = r1.getFloat("Amount");
+                                                    
+                                                    if(id == id_plan)
+                                                    {
+                                                    	amount = amo;
+                                                    	
+                                                    }
+                                                }
                                           }
-                                          %> Enter money <input  name="money"  value = "<% out.print(amount);%>" ><button><a href ="browsePlan.jsp">Browse Plan</a></button>
+                                          %> Enter money <input  name="money"  value = "<% out.print(amount);%>" ><a href ="browsePlan.jsp">Browse Plan</a>
                                           <%
                                          
                                           
