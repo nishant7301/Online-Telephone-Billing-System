@@ -13,37 +13,40 @@
 HttpSession ses=request.getSession(false);  
 String user = (String)ses.getAttribute("uname");
 
+float amount_from_browsePlan = Float.parseFloat(request.getParameter("browse_plan_money").trim());
+
+
+
 Class.forName("com.mysql.jdbc.Driver");
 String pno="";
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/nishant?autoReconnect=true&useSSL=false","root","root"); 
 Statement st= con.createStatement();
 ResultSet rs1=st.executeQuery("select * from cutomer_record where uname='"+user+"'");
-if(rs1.next())
-{
-	ResultSet rs2=st.executeQuery("select pno from cutomer_record where uname='"+user+"'");
-	if(rs2.next())
-			{
-		double l2=0;
-		pno=rs2.getString("pno");
-		ResultSet rs4=st.executeQuery("select total from bill_record where pno='"+pno+"'");
-		while(rs4.next())
-		{
-		 l2 = rs4.getDouble("total");
+float amount_from_customer = 0.0f;
+try{
+	while(rs1.next())
+	{
+		amount_from_customer = rs1.getFloat("Amount");
+   }
+} catch(Exception e ){
+	out.println("YOU HAVE NOT TAKEN CONNECTION");
+}
 
-		}
-		out.println("before payment ballance is:"+l2);
-	//	double temp=l2-k1;
-		//out.println("after payment ballance is:"+temp);
-		//int j1=st.executeUpdate("update bill_record set  total='"+temp+"' where pno='"+pno+"'"); 
-		
-			}
-	
-	
+
+// Due Recharge Cong=firmateon not done 
+if(amount_from_browsePlan <= amount_from_customer )
+{
+	amount_from_customer = amount_from_customer - amount_from_browsePlan;
+     int i = st.executeUpdate("update cutomer_record set Amount = "+ amount_from_customer + " where uname = '" + user  + "'");
+     if(i == 1) out.println("Recharge Succes !!");
+     else out.println("Recharge Failed !!");
 }
 else
 {
-	out.println("YOU HAVE NOT TAKEN CONNECTION");
+	out.print("You don't have sufficient Money in your wallet");
 }
+
+
 
 %>
 <br>

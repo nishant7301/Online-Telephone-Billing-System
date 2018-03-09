@@ -56,7 +56,9 @@ function checkForm()
                                           <pre><h4> Mobile Number :  <% out.println(mobile_number);%></h4> </pre>
                                         <% 
                                           float amount = 0.0f;
-                                        
+                                          String validity = null;
+                                          String talktime = null;
+                                          String data = null;
                                         
                                           String plan_topup= request.getParameter("radioButtonDataTopup");
                                           String plan_2g3g= request.getParameter("radioButtonData2G3G");
@@ -74,11 +76,15 @@ function checkForm()
                                                 {
                                                     int id = r1.getInt("id");
                                                     float amo = r1.getFloat("Amount");
-                                                    
+                                                    String val = r1.getString("Validity");
+                                                    String tt = r1.getString("Talktime");
+                                                    String dt = r1.getString("Data");
                                                     if(id == id_plan)
                                                     {
                                                     	amount = amo;
-                                                    	
+                                                    	validity = val;
+                                                    	talktime = tt;
+                                                    	data = dt;
                                                     }
                                                 }
                                           }
@@ -91,11 +97,15 @@ function checkForm()
                                                {
                                                    int id = r1.getInt("id1");
                                                    float amo = r1.getFloat("Amount");
-                                                   
+                                                   String val = r1.getString("Validity");
+                                                   String tt = r1.getString("Talktime");
+                                                   String dt = r1.getString("Data");
                                                    if(id == id_plan)
                                                    {
                                                    	amount = amo;
-                                                   	
+                                                   	validity = val;
+                                                   	talktime = tt;
+                                                   	data = dt;
                                                    }
                                                }
                                          }
@@ -108,11 +118,15 @@ function checkForm()
                                                   {
                                                       int id = r1.getInt("id2");
                                                       float amo = r1.getFloat("Amount");
-                                                      
+                                                      String val = r1.getString("Validity");
+                                                      String tt = r1.getString("Talktime");
+                                                      String dt = r1.getString("Data");
                                                       if(id == id_plan)
                                                       {
                                                       	amount = amo;
-                                                      	
+                                                      	validity = val;
+                                                      	talktime = tt;
+                                                      	data = dt;
                                                       }
                                                   }
                                             }
@@ -125,11 +139,15 @@ function checkForm()
                                                  {
                                                      int id = r1.getInt("id3");
                                                      float amo = r1.getFloat("Amount");
-                                                     
+                                                     String val = r1.getString("Validity");
+                                                     String tt = r1.getString("Talktime");
+                                                     String dt = r1.getString("Data");
                                                      if(id == id_plan)
                                                      {
                                                      	amount = amo;
-                                                     	
+                                                     	validity = val;
+                                                     	talktime = tt;
+                                                     	data = dt;
                                                      }
                                                  }
                                            }
@@ -137,9 +155,10 @@ function checkForm()
 
                                              
                                           
-                                          %> Enter money <input  name="money"  value = "<% out.print(amount);%>" ><a href ="browsePlan.jsp">Browse Plan</a>
+                                          %> Enter money <input  name="browse_plan_money"  value = "<% out.print(amount);%>" ><a href ="browsePlan.jsp">Browse Plan</a>
                                           <%
-                                         
+                                           
+                                            
                                           
                                           
                                           %>
