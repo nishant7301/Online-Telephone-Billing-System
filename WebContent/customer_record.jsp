@@ -22,6 +22,8 @@ String  address= request.getParameter("address");
 String pin = request.getParameter("pin");
 String baccount = request.getParameter("baccount");
 String date=request.getParameter("date"); 
+String Amount=request.getParameter("amount"); 
+String card_no=request.getParameter("cardno"); 
 try
 {
 Class.forName("com.mysql.jdbc.Driver"); 
@@ -35,7 +37,7 @@ if(rs.next())
 }
 else
 {
-int j=st.executeUpdate("insert into cutomer_record values('"+uname+"','"+cname+"','"+pno+"','"+occupation+"','"+gender+"','"+dob+"','"+address+"','"+pin+"','"+baccount+"','"+date+"')"); /* here lab.test is lab(project_name) and test(project_table_name) */
+int j=st.executeUpdate("insert into cutomer_record values('"+uname+"','"+cname+"','"+pno+"','"+occupation+"','"+gender+"','"+dob+"','"+address+"','"+pin+"','"+baccount+"','"+date+"','"+Amount+"','"+card_no+"')"); /* here lab.test is lab(project_name) and test(project_table_name) */
 
 out.println("recorded is successfully inserted \n");
 }

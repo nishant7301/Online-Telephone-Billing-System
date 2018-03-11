@@ -27,4 +27,14 @@
     <servlet-name>browsePlan</servlet-name>
     <url-pattern>/browsePlan</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RandomBillNumber</display-name>
+    <servlet-name>RandomBillNumber</servlet-name>
+    <servlet-class>RandomBillNumber</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RandomBillNumber</servlet-name>
+    <url-pattern>/RandomBillNumber</url-pattern>
+  </servlet-mapping>
 </web-app>

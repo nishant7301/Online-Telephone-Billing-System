@@ -67,6 +67,10 @@ text-decoration:none;
 <% HttpSession ses=request.getSession(false);  
 String uname = (String)ses.getAttribute("uname");
 String pwd = (String)ses.getAttribute("password");
+
+HttpSession s=request.getSession();
+s.setAttribute("user", uname);
+
 Class.forName("com.mysql.jdbc.Driver");
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/nishant?autoReconnect=true&useSSL=false","root","root"); 
 Statement st= con.createStatement();
@@ -82,6 +86,8 @@ String address = null;
 String pin = null;
 String email = null;
 String date = null;
+String bill_no = null;
+Float balance = null;
 while(rs.next())
 {
 	String user = rs.getString("uname");
@@ -107,6 +113,8 @@ while(rs.next())
 				 pin = rs.getString("pin");
 				 email = rs1.getString("email");
 				 date = rs.getString("date");
+				 bill_no = rs.getString("bill_no");
+				 balance = rs.getFloat("Amount");
 			}
 			
 		}
@@ -126,7 +134,7 @@ while(rs.next())
         <li><a href="home.jsp">Home</a></li>
         <li><a href = "call_history.jsp">CALL HISTORY</a></li>
         <li><a href = "gsmhistory.jsp">DATA HISTORY</a></li>
-      <li><a href="Billpayment1.jsp">RECHARGE</a></li>
+      <li><a href="postBill1.jsp">BILL PAY</a></li>
       <li><a href="Bill.jsp">VIEW VOICE CALL BILL</a></li>
       <li><a href="Gsmbill.jsp">VIEW GSM  BILL</a></li>
       <li><a href="wcdmabill.jsp">VIEW WCDMA  BILL</a></li>
@@ -150,7 +158,10 @@ while(rs.next())
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px">  Bank Account Details : <% out.print(bank_account);%></h3>
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px">  Email ID: <% out.print(email);%></h3>
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px">  Connection Date: <% out.print(date);%></h3>
-
+<h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px">  Bill Number: <% out.print(bill_no);%></h3>
+<h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px">  Account Balance: <% out.print(balance);%></h3>
+<br>
+<br>
 </div>
 </div>
 <div class = "row" style ="background: url(d1.jpg) blue;">

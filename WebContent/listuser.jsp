@@ -10,7 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <body>
 <div class = "colsm-8">
 </div>

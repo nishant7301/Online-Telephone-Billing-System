@@ -2,6 +2,12 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+ <title>Bootstrap Theme Simply Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script>
 function f()
 {
@@ -49,20 +55,20 @@ if(!(document.profile.baccount.value.length==11))
 <title>profile</title>
 </head>
 <body align="center" bgcolor="#808080">
-<h2 align="center">UPDATE INFORMATION</h2>
+<font color="RED"><h2 align="center">UPDATE INFORMATION</h2></font>
 <form name="profile" action="updateinfo.jsp "method="get" onsubmit="return f()">
 <p align="center">
 <pre>
 
 
 
-                          Occupation   <input type="text" name="occupation" required>
+                      Occupation   <input type="text" name="occupation" required>
                          
-                          ADDRESS      <input type="text" name="address" required>
+                      ADDRESS      <input type="text" name="address" required>
 
-			   PIN         <input type="text" name="pin" required>
+			PIN        <input type="text" name="pin" required>
 		
-		      Bank_Account No: <input type="text" name="baccount" required>
+		 Bank_Account No   <input type="text" name="baccount" required>
 		
 
                                        <input type="submit" name="submit" value="INSERT"> <form> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> </form> 

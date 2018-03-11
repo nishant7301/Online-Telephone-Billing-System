@@ -2,6 +2,13 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<title>Bootstrap Theme Simply Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <script type="text/javascript">
 function check()
 {
@@ -30,8 +37,8 @@ if(!(document.reset1.password.value==document.reset1.confpassword.value))
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>RESET PASSWORD PAGE</title>
 </head>
-<body bgcolor="#808080">
-<h1 align="center"><font color="red">WELCOME TO RESET PASSWORD PAGE</font></h1>
+<body>
+<h1 align="center"><font color="red">WELCOME TO RESET PASSWORD</font></h1>
 <form  name="reset1" action="reset.jsp" method="post" onsubmit="return check()">
 <input type="hidden" name="ID" value="INSERT" onsubmit="return check()">
 

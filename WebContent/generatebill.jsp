@@ -3,6 +3,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<title>Bootstrap Theme Simply Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>generate bill</title>
 </head>
@@ -32,6 +38,8 @@ color:#ffffff;
 <h1>Bill Details:-</h1>
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
+
+<div class ="col-sm-3">
 <%
 HttpSession ses=request.getSession(false);  
 String user = (String)ses.getAttribute("uname");
@@ -48,7 +56,7 @@ for( k=1;k<=7;k++)
 {
 	switch(k){
 	 case 1:
-	        out.println("<br/>user name:");
+	        out.println("<br/><centre>user name:</centre>");
 	        out.println(rs2.getString(k));
 	         out.println("<br/>");
 	        out.println("<br/>");
@@ -141,6 +149,7 @@ out.println(m_rental);
 }
 out.println("<br/>TOTAL:");
 %>
+</div>
 <br></br>
 <button id = "pdf_button" onclick="myFunction()"><font color="red"> Generate PDF</font> </button><br></br>
 <form><input type="button" value="USER MENU"  onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /></form> 

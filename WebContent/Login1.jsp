@@ -83,7 +83,7 @@ text-decoration:none;
         <li><a href="#"><mark>DASHBOARD</mark></a></li>
          <li><a href="home.jsp">HOME</a></li>
         <li><a href="Registration1.jsp">Sign UP</a></li>
-      <li><a href="Login1.jsp">Login</a></li>
+      <li><a  class="active" href="Login1.jsp">Login</a></li>
        
 </ul>
 </div>

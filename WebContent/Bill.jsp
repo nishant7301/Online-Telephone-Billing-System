@@ -3,13 +3,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Simply Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Bill detail</title>
 <style type="text/css">
-body{
-	background-color:#808080;
-	
-}
 table, th, td {
     border: 1px solid black;
     padding: 5px;
@@ -26,6 +28,7 @@ background-color:grey;
 	<%@ page import="javax.sql.*"%>
 <%
 try{
+	Double to;	
 HttpSession ses=request.getSession(false);  
 String uname = (String)ses.getAttribute("uname");
 Class.forName("com.mysql.jdbc.Driver");
@@ -105,6 +108,19 @@ int ISD = 0;
 	{
 	st.executeUpdate("insert into bill_record values('"+uname+"','"+pno+"','"+address+"','"+localmt+"','"+stdmt+"','"+Isdmt+"','"+total+"')");
 	}
+	
+	ResultSet st_bill = st.executeQuery("select * from bill_record where pno='"+pno+"'" );
+	
+	
+	// Code Due....
+	 while(st_bill.next()){
+		 
+	 }
+	
+	
+	
+	
+	
 	%>
 <table class = "table table-condensed" style = "width:70%;">
 	   <tr class = "danger">
@@ -158,17 +174,16 @@ int ISD = 0;
 
 	<%
 	
-
+ to = m_rental+total;
+	 HttpSession s=request.getSession();
+	  s.setAttribute("amount", to);
+	  s.setAttribute("user", uname);
 %>
 
 <% 
-String information="<a href=\"Billpayment1.jsp\">Bill payment</a>";
-out.println("<br/><br/>");
-out.println(information); 
-out.println("<br/>");
 String information1="<a href=\"generatebill1.jsp\">Bill generate</a>";
 out.println("<br/><br/>");
-out.println(information1); 
+out.println(""); 
 out.println("<br/>");
 out.println("<br/>");
 
@@ -178,8 +193,18 @@ catch(Exception e)
 	out.println("you haven't taken a connection\n");
 }
 %>
+<form> <input type="button" value="Bill generate" onclick="window.location.href='http://localhost:8080/login/generatebill1.jsp'" /> </form> 
 
+<br>
+<form name="PostPaidBilling"  action="postBill1.jsp" method="get">
+ 
+  <input type = "submit" value = "pay now">
+</form>
+<br>
 <form> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> </form> 
+<br>
+
+
 <br></br> 					
 </body>
 </html>
