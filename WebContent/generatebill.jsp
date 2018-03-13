@@ -12,13 +12,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>generate bill</title>
 </head>
-<script>
-function myFunction(){
-	print();
-	       
-}
-
-</script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
 <style>
 #pdf_button{
 font-color:#ffffff;
@@ -43,12 +37,12 @@ color:#ffffff;
 <%
 HttpSession ses=request.getSession(false);  
 String user = (String)ses.getAttribute("uname");
-String pno=request.getParameter("pno");
+String pno1=request.getParameter("pno");
 Class.forName("com.mysql.jdbc.Driver");
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/nishant?autoReconnect=true&useSSL=false","root","root"); 
 Statement st= con.createStatement();
 
-	ResultSet rs2=st.executeQuery("select * from bill_record where pno='"+pno+"' and uname='"+user+"'");
+	ResultSet rs2=st.executeQuery("select * from bill_record where pno='"+pno1+"' and uname='"+user+"'");
 if(rs2.next())
 {
 	int k=1;
@@ -106,7 +100,7 @@ else
 	out.println("Invalid Mobile number");
 }
 Statement st1= con.createStatement();
-ResultSet rs3=st.executeQuery("select * from gsmbill where pno='"+pno+"' and uname='"+user+"'");
+ResultSet rs3=st.executeQuery("select * from gsmbill where pno='"+pno1+"' and uname='"+user+"'");
 if(rs3.next())
 {
 int n=1;
@@ -124,7 +118,7 @@ for( n=1;n<=3;n++)
 
 }
 Statement st2= con.createStatement();
-ResultSet rs4=st.executeQuery("select * from wcdmabill where pno='"+pno+"' and uname='"+user+"'");
+ResultSet rs4=st.executeQuery("select * from wcdmabill where pno='"+pno1+"' and uname='"+user+"'");
 if(rs4.next())
 {
 int i=1;
@@ -142,12 +136,6 @@ for( i=1;i<=3;i++)
 }
 Statement st0= con.createStatement();
 ResultSet rs7=st0.executeQuery("select * from call_rate");
-if(rs7.next()){
-double m_rental=rs7.getDouble("M_Rental");
-out.println("<br/>MONTHLY RENTAL:");
-out.println(m_rental);
-}
-out.println("<br/>TOTAL:");
 %>
 </div>
 <br></br>

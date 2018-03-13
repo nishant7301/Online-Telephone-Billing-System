@@ -54,14 +54,14 @@ while(n7.next())
 double Gsm_money=0.0;
 Gsm_money=(Gsm_Usage*Gsm_rate)/100;
 Statement st4 = con.createStatement();
-ResultSet rs=st4.executeQuery("select * from gsmbill where pno='"+pno+"'");
+ResultSet rs=st4.executeQuery("select * from gsmbill where pno='"+pno1+"'");
 if(rs.next()){
-	int j=st4.executeUpdate("delete from gsmbill where pno='"+pno+"'");
-	st4.executeUpdate("insert into gsmbill values('"+pno+"','"+uname+"','"+Gsm_money+"')");
+	int j=st4.executeUpdate("delete from gsmbill where pno='"+pno1+"'");
+	st4.executeUpdate("insert into gsmbill values('"+pno1+"','"+uname+"','"+Gsm_money+"')");
 }
 else	
 {
-st4.executeUpdate("insert into gsmbill values('"+pno+"','"+uname+"','"+Gsm_money+"')");
+st4.executeUpdate("insert into gsmbill values('"+pno1+"','"+uname+"','"+Gsm_money+"')");
 }
 
 

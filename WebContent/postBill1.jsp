@@ -12,27 +12,36 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Bill payment</title>
 <script type="text/javascript">
-f1()
+ function f1()
 {
-	var bnum = document.forms["payBill1"]["bnum"];
-	var amt= document.forms["payBill1"]["amt"];
-	var cardno = document.forms["payBill1"]["cardno"];
-	if(isNaN(document.payBill1.amt.value))
-	{alert("amount should be contain numerics only");
+	var bnum = document.forms["postBill1"]["bnum"];
+	var cardno = document.forms["postBill1"]["cardno"];
+	
+	if(isNaN(document.postBill1.bnum.value))
+	{
+	alert("Bill Number should be contain numerics only");
 	return false;
 	}
-	if(isNaN(document.payBill1.cardno.value))
-	{alert("card number should be contain numerics only");
+	
+	if(isNaN(document.postBill1.cardno.value))
+	{
+	alert("card number should be contain numerics only");
 	return false;
 	}
+	if(!(document.postBill1.cardno.value.length==16))
+	{ 
+		alert("card number should be 16 digit");
+	return false;
+	}
+	
+	}
+</head>
 
-	}
 
 </script>
-</head>
 <body>
 <center><font color="RED"><h1>WELCOME TO BILL PAYMENT </h1></center></font>
-<form name="postBill1"  action="PostPaidBilling.jsp" method="get" onsubmit="return f1()">
+<form name="postBill1"  action="PostPaidBilling.jsp" method="post" onsubmit="f1()">
 <p align="center">
 <pre>
 
@@ -41,9 +50,14 @@ f1()
 
                                                                 Bill Number  <input type="text" name="bnum" required>
 
-                                                                
-
                                                                 Card no      <input type="password" name="cardno" required >
+                                                                
+                                                                Due Date     <input type="date" name="date">
+                                                                 <script>
+<script type="text/javascript">
+  document.getElementById('date').value = Date();
+</script>
+                
                                                                 <%
                                                                 HttpSession ses=request.getSession(false);  
                                                        		    String user = (String)ses.getAttribute("user");

@@ -54,14 +54,14 @@ while(n7.next())
 double Wcdma_money=0.0;
 Wcdma_money=(Wcdma_Usage*Wcdma_rate)/100;
 Statement st4 = con.createStatement();
-ResultSet rs=st4.executeQuery("select * from wcdmabill where pno='"+pno+"'");
+ResultSet rs=st4.executeQuery("select * from wcdmabill where pno='"+pno1+"'");
 if(rs.next()){
-	int j=st4.executeUpdate("delete from wcdmabill where pno='"+pno+"'");
-	st4.executeUpdate("insert into wcdmabill values('"+pno+"','"+uname+"','"+Wcdma_money+"')");
+	int j=st4.executeUpdate("delete from wcdmabill where pno='"+pno1+"'");
+	st4.executeUpdate("insert into wcdmabill values('"+pno1+"','"+uname+"','"+Wcdma_money+"')");
 }
 else	
 {
-st4.executeUpdate("insert into wcdmabill values('"+pno+"','"+uname+"','"+Wcdma_money+"')");
+st4.executeUpdate("insert into wcdmabill values('"+pno1+"','"+uname+"','"+Wcdma_money+"')");
 }
 
 

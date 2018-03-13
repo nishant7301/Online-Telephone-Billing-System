@@ -33,7 +33,7 @@ padding
   }
   
    %><h3 class = "text-center">Hello USER </h3> details for your number : <%out.println(pno1); %> ===><%;
-  ResultSet rs=st.executeQuery("select * from customer_meter where pno = '"+pno1+"' order by date desc");
+  ResultSet rs=st.executeQuery("select * from temp_customer_meter where pno = '"+pno1+"' order by date desc");
   int isd = 0;
   int std = 0;
   int local = 0;

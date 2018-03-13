@@ -26,6 +26,8 @@ Statement st= con.createStatement();
 ResultSet rs2=st.executeQuery("select * from cutomer_record where pno='"+pno+"' order by pno");
 if(rs2.next()){
 st.executeUpdate("insert into customer_meter values('"+pno+"','"+local+"','"+Std+"','"+Isd+"','"+cname+"','"+date+"')"); 
+st.executeUpdate("insert into temp_customer_meter values('"+pno+"','"+local+"','"+Std+"','"+Isd+"','"+cname+"','"+date+"')"); 
+
 HttpSession ses=request.getSession();  
 ses.setAttribute("pno",pno);
 ses.setAttribute("cname", cname);  
