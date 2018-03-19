@@ -25,18 +25,23 @@ background-color:grey;
 }
 .currentRates{
 background-color:#a1a1a1;
-border-radius:15px;
+border-radius:8px;
 font-color:white;
-margin:15px;
-padding:10px;
+margin:8px;
+padding:5px;
 }
 .rate{
 background-color:white;
-border-radius:15px;
+border-radius:8px;
 font-color:black;
-margin:15px;
-padding:10px;
+margin:8px;
+padding:5px;
 }
+body  {
+    background-image: url("4.jpg");
+    background-color: #cccccc;
+}
+
 </style>
 </head>
 <body>
@@ -64,8 +69,11 @@ int STD = 0;
 int LOCAL = 0;
 int ISD = 0;
 
-	ResultSet n2=st2.executeQuery("select * from cutomer_record where uname='"+uname+"'");	
+	ResultSet n3=st2.executeQuery("select * from cutomer_record where uname='"+uname+"'");	
 	String pno1 = null;
+	if(n3.next())
+	{
+		ResultSet n2=st2.executeQuery("select * from cutomer_record where uname='"+uname+"'");
 	while(n2.next())
 		{
 			pno1 = n2.getString("pno");	
@@ -106,7 +114,6 @@ int ISD = 0;
 		
 	}
 	String address=null;
-	out.println("date   "+date);
 	localmt = (local * 1.0 * l1)/100;
 	stdmt =  (std  * 1.0 *l2)/100;
 	Isdmt =  (isd * 1.0 *l3)/100;
@@ -129,13 +136,9 @@ int ISD = 0;
 	st.executeUpdate("insert into bill_record values('"+uname+"','"+pno1+"','"+address+"','"+localmt+"','"+stdmt+"','"+Isdmt+"','"+total+"')");
 	}
 	
-	ResultSet st_bill = st.executeQuery("select * from bill_record where pno='"+pno1+"'" );
 	
 	
 	// Code Due....
-	 while(st_bill.next()){
-		 
-	 }
 	
 	%>
 <div class = "text-center currentRates jumbotron">
@@ -164,16 +167,8 @@ int ISD = 0;
               
          </div>
                  <div class = "col-md-1"></div>
-        
-
-   
    </div>
-
-
 </div>	
-	
-	
-	
 	
 <table class = "table table-condensed center" style = "width:70%;"  align="center">
 	   <tr class = "danger">
@@ -200,8 +195,8 @@ int ISD = 0;
 
 <td><% out.println(Isdmt);%></td>
 </tr>
-<th></th>
-<td></td>
+<th> </th>
+<td> </td>
 
 <td><% out.println("TOTAL  :" + (localmt+stdmt+Isdmt));%></td>
 <tr>
@@ -209,16 +204,7 @@ int ISD = 0;
   
 </tr>
 </table>
-</br>
-</br>
-<!--  
-
-</table>
-<table><th>TOTAL==</th>
-<td><%out.println(m_rental+total); %></td>
-
-</table>
--->
+<br>
 	<%
 	
 	 HttpSession s=request.getSession();
@@ -231,25 +217,25 @@ out.println("<br/><br/>");
 out.println(""); 
 out.println("<br/>");
 out.println("<br/>");
-
+	}
+	else
+	{
+	
+		response.sendRedirect("message.jsp"); 
+	
+	}
 }
 catch(Exception e)
 {
 	out.println("you haven't taken a connection\n");
 }
 %>
-<form> <input type="button" value="Bill generate" onclick="window.location.href='http://localhost:8080/login/generatebill1.jsp'" /> </form> 
+<center> <input type="button" value="Bill generate" onclick="window.location.href='http://localhost:8080/login/generatebill1.jsp'" /> 
+         
 
-<br>
-<form name="PostPaidBilling"  action="postBill1.jsp" method="get">
- 
-  <input type = "submit" value = "pay now">
-</form>
-<br>
-<form> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> </form> 
-<br>
-
-
-<br></br> 					
+             <input type="button" value="PAY NOW" onclick="window.location.href='http://localhost:8080/login/postBill1.jsp'" /> <br>
+                             <br>
+ <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /></center> 
+<br>	
 </body>
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <script>
 function checkForm()
 {
@@ -74,16 +73,29 @@ padding:10px;
 text-decoration:none;
 }
 
+.visible a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.visible a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+body  {
+    background-image: url("m1.jpg");
+    background-color: #cccccc;
+}
 </style>
 </head>
-<body bgcolor="red">
+<body>
 <div id="sidebar"  class="visible">
 <ul>
   
         <li><a href="#"><mark>DASHBOARD</mark></a></li>
          <li><a href="home.jsp">HOME</a></li>
         <li><a href="Registration1.jsp">Sign UP</a></li>
-      <li><a  class="active" href="Login1.jsp">Login</a></li>
+      <li><a  class ="btn active" href="Login1.jsp">Login</a></li>
        
 </ul>
 </div>
@@ -103,39 +115,29 @@ $(document).ready(function(){
 			});
 	});
 </script>
-
-</style>
-</head>
-<body bgcolor="#808080">
-<h1 align="center"><font color="">TELEPHONE BILLING SYSTEM</font></h1>
+<h1 align="center"><font>TELEPHONE BILLING SYSTEM</font></h1>
 <form name="Login1"  action="login.jsp" method="post" onSubmit=" return checkForm()">
 <input type="hidden" name="ID" value="INSERT">
-<marquee style="background:RED" behavior="alternate"><a href="#"><img src="new.gif"><h2 onclick="myFunction()">Special Offfer in 399 get 1.5GB/Day and free voice call for 84 days</h2> </a></marquee>
-<script>
-function myFunction() {
-    alert("Login first");
-}
-</script>
 <p align="center">
 <pre>
 
  
-                                                                          UserId  <input type="text" name="uname" required>
+                                                      <strong>                  UserId   <input type="text" name="uname" required> </strong>
                           			  
-                                                                         Password <input type="password" name="password" required>				
+                                                      <strong>                  Password <input type="password" name="password" required></strong>				
 	   
 		                                                                           <button type="submit" name="submit">Submit</button>
 		                                          
-		              	                                                           <a href="forget1.jsp">FORGET PASSWORD?</a>
+		              	                                         <strong >                  <a href="forget1.jsp">FORGET PASSWORD?</a> </strong> 
 	                        	                   
-						                                           <b>New user</b> <a href="Registration1.jsp">Registration</a>
-						           
+						                          <strong>                 <b>New user</b> <a href="Registration1.jsp">Registration</a>
+						           </strong>
 							</pre>
 							
 							
 						
 							
-							</p>
+					
 							
 							
 							</form>

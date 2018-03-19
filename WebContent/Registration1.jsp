@@ -50,19 +50,20 @@ if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
     alert("Not a valid e-mail address");
     return false;
 }
+
 }
 </script>
-
-<head>
 <style type="text/css">
-body{
-	background-color:#808080
+body  {
+    background-image: url("m1.jpg");
+    background-color: #cccccc;
 }
 </style>
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body>
-<h1 align="center">NEW USER REGISTRATION</h1>
+<marquee style="background:RED" behavior="alternate"><h2>WELCOME TO NEW REGISTRATION</h2></marquee>
 
 <form  name="Registration1" action="registration.jsp" method="post" onsubmit="return check()">
 <input type="hidden" name="ID" value="INSERT">
@@ -70,27 +71,22 @@ body{
 <p align="center">
 
 <pre>
-	       	                         UserId*   		 <input type="text" name="uname" required>
+	       	                                        UserId*   	<input type="text" name="uname" required>
 		
-		                         mobile number           <input type="text" name="mnumber" required>
+		                                        mobile number   <input type="text" name="mnumber" required>
 
-		                         Password* 		 <input type="password" name="password" required>
+		                                        Password* 	<input type="password" name="password" required>
 		
-		                         confPassword* 	         <input type="password" name="confpassword" required>
+		                                        confPassword* 	<input type="password" name="confpassword" required>
 		
-		                         Email Id*		 <input type="text" name="email" required>
+		                                        Email Id*	<input type="text" name="email" required>
 
 					
-					                         <input type="submit" name="submit" value="INSERT"><form>    <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/user.html'" />
-              </form>
-					                            <p><ul>* denotes mandatory field</ul>
-						</p>							
-													
-														
+					                                  <input type="submit" name="submit" value="INSERT">    <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/user.html'" />
+              													
 </pre>
-</p>
-</form>
                              
-
+</form>
+ <h1>* denotes mandatory field</h1>
 </body>
 </html>

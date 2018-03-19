@@ -14,8 +14,7 @@ HttpSession ses=request.getSession(false);
 String user_name = (String)ses.getAttribute("uname");
  
 String password1=request.getParameter("password1"); 
-String newpassword=request.getParameter("newpassword"); 
-session.putValue("uanme",user_name); 
+String newpassword=request.getParameter("newpassword");  
 Class.forName("com.mysql.jdbc.Driver"); 
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/nishant?autoReconnect=true&useSSL=false",
 "root","root"); 

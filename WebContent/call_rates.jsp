@@ -12,7 +12,6 @@
 <%
 String local=request.getParameter("local"); 
 String call_id=request.getParameter("call_id"); 
-session.putValue("call_id",call_id); 
 String Std=request.getParameter("Std"); 
 String Isd=request.getParameter("Isd"); 
 String M_Rental=request.getParameter("M_Rental"); 

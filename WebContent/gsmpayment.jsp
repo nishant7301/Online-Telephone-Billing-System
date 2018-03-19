@@ -1,25 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>GSM Payment</title>
 <script type="text/javascript">
  function f1()
 {
-	var bnum = document.forms["postBill1"]["bnum"];
-	var cardno = document.forms["postBill1"]["cardno"];
+	var bnum = document.forms["gsmpayment"]["bnum"];
+	var cardno = document.forms["gsmpayment"]["cardno"];
 	
-	if(isNaN(document.postBill1.bnum.value))
+	if(isNaN(document.gsmpayment.bnum.value))
 	{
 	alert("Bill Number should be contain numerics only");
 	return false;
 	}
 	
-	if(isNaN(document.postBill1.cardno.value))
+	if(isNaN(document.gsmpayment.cardno.value))
 	{
 	alert("card number should be contain numerics only");
 	return false;
 	}
 	
-	if(!(document.postBill1.cardno.value.length==16))
+	if(!(document.gsmpayment.cardno.value.length==16))
 	{ 
 		alert("card number should be 16 digit");
 	return false;
@@ -34,14 +37,11 @@ body  {
     background-color: #cccccc;
 }
 </style>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Bill payment</title>
 </head>
 <body>
-<h1 align="center"> WELCOME TO BILL PAYMENT </h1>
+<h1 align="center"> WELCOME TO GSM BILL PAYMENT </h1>
 
-<form name="postBill1"  action="PostPaidBilling.jsp" method="post" onsubmit=" return f1()">
+<form name="gsmpayment"  action="gsmpayment1.jsp" method="post" onsubmit=" return f1()">
 <p>
 <pre>
 
@@ -64,5 +64,6 @@ body  {
 		
 </pre>                                                                                
 </form>
+
 </body>
 </html>

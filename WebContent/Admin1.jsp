@@ -20,18 +20,11 @@ return false;
 </script>
 <head>
 <meta charset="ISO-8859-1">
-<title>WLCOME TELEPHONE ADMIN PAGE</title>
 <style type="text/css">
-body{
-margin:0px;
-padding:0px;
-font-family:"Helvetica Neue",Helvetica,Arial;
-background-color:#808080;
-}
 #sidebar{
 background:blue;
 width:200px;
-height:100%;
+height:180%;
 display:block;
 position:absolute;
 left:-200px;
@@ -62,7 +55,6 @@ padding:0px;
 }
 ul li{
 list-style:none;
-
 }
 ul li a{
 background:blue;
@@ -74,28 +66,36 @@ padding:10px;
 text-decoration:none;
 }
 
+.visible a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.visible a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+body  {
+    background-image: url("m1.jpg");
+    background-color: #cccccc;
+}
 </style>
 </head>
 <body>
+<marquee style="background:RED" behavior="alternate"><h2>WELCOME TO HOME PAGE ADMIN</h2></marquee>
 <div id="sidebar"  class="visible">
 <ul>
          <li><a href="#">DASHBOARD</a></li>
          <li><a href="home.jsp">HOME</a></li>
-        <li><a href="Admin1.jsp">ADMIN ENTERY</a></li>
-      <li><a href="#">ABOUT</a></li>
-       
-       
-       
+        <li><a  class="btn active" href="Admin1.jsp">ADMIN ENTERY</a></li>
+      <li><a href="#">ABOUT</a></li>     
 </ul>
 </div>
-
 <div id="sidebar-btn">
 <span></span>
 <span></span>
 <span></span>
- 
 </div>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -103,30 +103,26 @@ $(document).ready(function(){
 		$('#sidebar').addClass('visible');
 			});
 	});
-</script>
-
-</style>
-</head>
-
-<body bgcolor="#808080">
-                 <h1 align="center"><font color="">WELCOME TO HOME PAGE OF ADMIN</font></h1>
-
+</script>      
 <br></br><br></br>
 <form name="Admin1"  action="admin.jsp" method="post" onSubmit=" return checkForm()">
-<p align="center">
+<p>
 <pre>                     
-                                                                       UserId  <input type="text" name="uname">
+                                                                    <strong>   UserId  <input type="text" name="uname" required> </strong>
                           			  
-                                                                      Password <input type="password" name="password">			
+                                                                  <strong>    Password <input type="password" name="password" required></strong>			
 	   
 		                                                                       <input type="submit" name="submit" value="SUBMIT">
 						                                                 
-						                                                 <a href="forget1.jsp">FORGET PASSWORD</a>	
+						                            <strong>                     <a href="forget1.jsp">FORGET PASSWORD?</a>	</strong>
  
                                                                  
 							</pre>	
-					</p>
+				
 							</form>
+					</body>
+					
+						
+							
 
-</body>
 </html>

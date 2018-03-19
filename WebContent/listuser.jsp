@@ -35,6 +35,7 @@ String bank_account = null;
 String address = null;
 String pin = null;
 String email=null;
+String Bill_no=null;
 %>
 
 <table class="table">
@@ -46,6 +47,7 @@ String email=null;
   <th>ADDRESS</th> 
   <th>OCCUPATION</th>
   <th>EMAIL</th>
+  <th>BILL NUMBER</th>
   <th>DUE AMOUNT</th>
   
 </tr>
@@ -61,6 +63,7 @@ while(rs.next())
 		 bank_account = rs.getString("baccount");
 		 address = rs.getString("address");
 		 pin = rs.getString("pin");
+		 Bill_no=rs.getString("bill_no");
 		 Statement st2= con.createStatement();
 		 ResultSet rs1=st2.executeQuery("select * from bill_record ");
 		 String due = "0";		 
@@ -92,6 +95,7 @@ while(rs.next())
     <td><%out.println(address); %></td>
     <td><%out.println(occupation); %></td>
      <td><%out.println(email); %></td>
+     <td><%out.println(Bill_no); %></td>
     <td><%out.println(due); %></td>
   </tr>
 

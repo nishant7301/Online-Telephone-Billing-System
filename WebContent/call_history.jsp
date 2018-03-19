@@ -25,14 +25,18 @@ padding
   Class.forName("com.mysql.jdbc.Driver");
   java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/nishant?autoReconnect=true&useSSL=false","root","root"); 
   Statement st= con.createStatement();
-  ResultSet n2=st.executeQuery("select * from cutomer_record where uname='"+uname+"'");	
+  ResultSet n3=st.executeQuery("select * from cutomer_record where uname='"+uname+"'");	
   String pno1=null;
+  if(n3.next())
+  {
+	  ResultSet n2=st.executeQuery("select * from cutomer_record where uname='"+uname+"'");	
   while(n2.next())
   {
+	  out.println("hi");
 	pno1=n2.getString("pno");
   }
   
-   %><h3 class = "text-center">Hello USER </h3> details for your number : <%out.println(pno1); %> ===><%;
+   %><h3 class = "text-center">Hello <%out.println(uname); %> </h3> details for your number : <%out.println(pno1); %> ===><%;
   ResultSet rs=st.executeQuery("select * from temp_customer_meter where pno = '"+pno1+"' order by date desc");
   int isd = 0;
   int std = 0;
@@ -76,6 +80,11 @@ padding
 	  <td><% out.println(isd);%></td>
 	  </tr>
 	  <%
+  }
+  }
+  else
+  {
+	  response.sendRedirect("message.jsp"); 	
   }
   
  %>

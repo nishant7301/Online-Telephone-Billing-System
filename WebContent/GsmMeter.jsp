@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <script type="text/javascript">
 function f1()
@@ -30,27 +29,33 @@ function f1()
 
 
 </script>
+<style>
+body  {
+    background-image: url("m1.jpg");
+    background-color: #cccccc;
+}
+
+</style>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Gsm rate entery </title>
 </head>
-<body bgcolor="#808080">
+<body>
 <h1 align="center">WLCCOME TO GSM BILL ENTERY </h1>
 <form name="GsmMeter"  action="GsmMeter1.jsp" method="get" onSubmit=" return f1()">
 <p align="center">
 <pre>
-                                    PHONE NO: <input type="text" name="pno" required> 
+                                                                    PHONE NO: <input type="text" name="pno" required> 
                 
-                         GSM USAGE IN SECOND: <input type="text" name="Gsm_Usage" required> 
+                                                             GSM USAGE IN KB: <input type="text" name="Gsm_Usage" required> 
                               
-                                      DATE  : <input type="date" name="date" required> dd/mm/yyyy                     
+                                                                      DATE  : <input type="date" name="date" required>                     
          
-                                              <input type="submit" name="submit" value="SUBMIT">  <form> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
+                                                                              <input type="submit" name="submit" value="SUBMIT">   <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
                                                 	           
                           			  
                     
                     </pre>
-                    </p>
+                    
                     </form>
                     
 

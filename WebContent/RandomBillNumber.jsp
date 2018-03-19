@@ -6,30 +6,36 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<style>
+body  {
+    background-image: url("m1.jpg");
+    background-color: #cccccc;
+}
 
+</style>
 <body>
 <%@page import="java.util.*" %>
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.sql.*"%>
 <%
 Random rand = new Random();
-int n = rand.nextInt(90000) + 10000;
+  int n = rand.nextInt(90000) + 10000;
 
 %>
 
 <%
  HttpSession ses1=request.getSession(false);  
  String user = (String)ses1.getAttribute("user");
- 
- out.println("Random generated number " + n );
  Class.forName("com.mysql.jdbc.Driver");
   java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/nishant?autoReconnect=true&useSSL=false","root","root"); 
   Statement st= con.createStatement();
-  ResultSet r=st.executeQuery("select * from cutomer_record");
-  
-  while(r.next())
+  ResultSet r=st.executeQuery("select * from cutomer_record where uname='"+user+"'");
+  if(r.next())
   {
-	  String user_name = r.getString("uname");
+	  ResultSet r1=st.executeQuery("select * from cutomer_record where uname='"+user+"' and bill_no is null");
+  while(r1.next())
+  {
+	  String user_name = r1.getString("uname");
 	  if(user_name.equals(user))
 	  {
 		  Statement s= con.createStatement();
@@ -40,10 +46,16 @@ int n = rand.nextInt(90000) + 10000;
 		  }
 	  }
   }
+out.println("already taken bill_number");
+  }
+  else
+  {
+	  response.sendRedirect("message.jsp"); 
 
- 
+  }
 
 %>
-  
+  <center><input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> 
+  </center>
 </body>
 </html>

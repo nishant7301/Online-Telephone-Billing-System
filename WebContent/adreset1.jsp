@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <script type="text/javascript">
 function check()
@@ -28,13 +27,18 @@ if(!(document.adreset1.password.value==document.adreset1.confpassword.value))
 
 </script>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<style>
+body  {
+    background-image: url("m1.jpg");
+    background-color: #cccccc;
+}
+</style>
+
+<title>Reset password</title>
 </head>
-<body bgcolor="#808080">
-<h1 align="center"><font color="red">WELCOME TO RESET PASSWORD PAGE</font></h1>
+<body>
+<h1 align="center"><font color="red">WELCOME TO RESET PASSWORD</font></h1>
 <form  name="adreset1" action="reset.jsp" method="post" onsubmit="return check()">
-<input type="hidden" name="ID" value="INSERT">
 
 <p align="center">
 
@@ -46,14 +50,13 @@ if(!(document.adreset1.password.value==document.adreset1.confpassword.value))
                                                  
                                                  ConfPassword <input type="password" name="confpassword" required>
 
-					                     <input type="submit" name="submit" value="INSERT"><form>      <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
-              </form>	                     
+					                     <input type="submit" name="submit" value="INSERT">      <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
+             	                     
 					                             
 					                             
 					                             
 		 </pre>
-					                                   
-</p>
+					                                  
 </form>
 
 </body>

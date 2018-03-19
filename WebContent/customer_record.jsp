@@ -11,8 +11,8 @@
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%
-String uname=request.getParameter("uname"); 
-session.putValue("uname",uname); 
+HttpSession ses=request.getSession(false);  
+String uname = (String)ses.getAttribute("uname");
 String cname=request.getParameter("cname"); 
 String pno=request.getParameter("pno"); 
 String occupation=request.getParameter("occupation");
@@ -30,25 +30,27 @@ Class.forName("com.mysql.jdbc.Driver");
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/nishant?autoReconnect=true&useSSL=false",
 "root","root"); 
 Statement st= con.createStatement(); 
-ResultSet rs=st.executeQuery("select * from cutomer_record where pno='"+pno+"' and uname='"+uname+"'");
+ResultSet rs=st.executeQuery("select * from cutomer_record where pno='"+pno+"' or uname='"+uname+"'");
 if(rs.next()) 
 { 
 	out.println("ALREADY YOU HAVE TAKEN CONNECTION");
 }
 else
 {
-int j=st.executeUpdate("insert into cutomer_record values('"+uname+"','"+cname+"','"+pno+"','"+occupation+"','"+gender+"','"+dob+"','"+address+"','"+pin+"','"+baccount+"','"+date+"','"+Amount+"','"+card_no+"')"); /* here lab.test is lab(project_name) and test(project_table_name) */
+int j=st.executeUpdate("insert into cutomer_record values('"+uname+"','"+cname+"','"+pno+"','"+occupation+"','"+gender+"','"+dob+"','"+address+"','"+pin+"','"+baccount+"','"+date+"','"+Amount+"','"+card_no+"','"+null+"')"); /* here lab.test is lab(project_name) and test(project_table_name) */
 
 out.println("recorded is successfully inserted \n");
 }
- }catch(Exception e)
+
+ }
+catch(Exception e)
 {
 	out.println(e.getMessage());
 }
  %>
  <form> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> </form> 
 			<br>
-			</br>
+			<br>
 	<form> <input type="button" value="LOG OUT" onclick="window.location.href='http://localhost:8080/login/home.jsp'" /> </form> 
 			
 

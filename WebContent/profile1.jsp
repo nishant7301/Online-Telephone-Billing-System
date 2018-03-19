@@ -13,8 +13,7 @@
 	
 	<% 
 	HttpSession ses=request.getSession(false);  
-	String uname = (String)ses.getAttribute("uname"); 
-	session.putValue("uname",uname);
+	String uname = (String)ses.getAttribute("uname");
 	Class.forName("com.mysql.jdbc.Driver");
 	java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/nishant?autoReconnect=true&useSSL=false","root","root"); 
 	Statement st= con.createStatement();
@@ -26,7 +25,7 @@
 			}
 	else
 	{
-		out.println("you have not taken connection, please take connection first");
+		response.sendRedirect("message.jsp"); 
 	}
 	
 	%>

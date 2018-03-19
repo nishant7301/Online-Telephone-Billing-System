@@ -19,7 +19,6 @@ String password=request.getParameter("password");
 HttpSession ses=request.getSession();  
 ses.setAttribute("uname",uname);
 ses.setAttribute("password", password);
-session.putValue("uname",uname);
 Class.forName("com.mysql.jdbc.Driver");
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/nishant?autoReconnect=true&useSSL=false","root","root"); 
 Statement st= con.createStatement();
@@ -53,7 +52,7 @@ else
 
 <br></br>
 <form> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/Login1.jsp'" /> </form> 
-</br>
-</br>
+<br>
+<br>
 </body>
 </html>

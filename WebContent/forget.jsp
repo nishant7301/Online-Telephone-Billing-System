@@ -18,12 +18,13 @@ String email=request.getParameter("email");
 Class.forName("com.mysql.jdbc.Driver");
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/nishant?autoReconnect=true&useSSL=false","root","root"); 
 Statement st= con.createStatement();
-ResultSet rs=st.executeQuery("select * from registration ");
+ResultSet rs=st.executeQuery("select * from registration where email='"+email+"'");
 String uname1 = null;
 String pwd = null;
 try
 {
-while(rs.next()) { 
+if(rs.next())
+{ 
 	String em = rs.getString("email");
 	
 	if(email.equals(em))
@@ -31,8 +32,11 @@ while(rs.next()) {
 	  uname1 = rs.getString("uname");
 	  pwd = rs.getString("password");
 	  out.println("Username : "+uname1+"\n Password : "+pwd);
-	  break;
 	}
+}
+else
+{
+	out.println("Please Insert Valid Email Id");
 }
 }
 catch(Exception e)

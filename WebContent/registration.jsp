@@ -9,14 +9,13 @@ body{
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title><h1>WELCOME TO TELEPHONE REGISTRATION PAGE</h1></title>
+<title>WELCOME TO TELEPHONE REGISTRATION PAGE</title>
 </head>
 <body>
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%
 String uname=request.getParameter("uname"); 
-session.putValue("uname",uname); 
 String password=request.getParameter("password"); 
 String confpassword=request.getParameter("confpassword"); 
 String email=request.getParameter("email");

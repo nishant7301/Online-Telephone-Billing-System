@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title><h1> WELCOME ADMIN PAGE</h1></title>
+<title>WELCOME ADMIN PAGE</title>
 <style type="text/css">
 body{
-	background-color:#808080
+	 background-image: url("4.jpg");
+    background-color: #cccccc;
 }
 </style>
 </head>
@@ -17,7 +18,6 @@ body{
 <%
 
 String uname=request.getParameter("uname"); 
-session.putValue("uname",uname); 
 String password=request.getParameter("password");
 HttpSession ses1=request.getSession();  
 ses1.setAttribute("uname",uname);

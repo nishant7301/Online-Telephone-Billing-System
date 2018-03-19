@@ -1,15 +1,8 @@
 <html>
- <title>Bootstrap Theme Simply Me</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
 <script>
 function f()
 {
-	var uname = document.forms["customer_record1"]["uname"];
+
 	var amount = document.forms["customer_record1"]["amount"];
 	var cardno = document.forms["customer_record1"]["cardno"];
 	var pno = document.forms["customer_record1"]["pno"];
@@ -20,11 +13,6 @@ function f()
 	var address = document.forms["customer_record1"]["address"];
 	var cname = document.forms["customer_record1"]["cname"];
 	var date = document.forms["customer_record1"]["date"];
-	
-if(document.customer_record1.uname.value.length>32)
-	{ alert("User Name should not be greater than 32 character");
-     return false;
-	}
 	
 if(document.customer_record1.cname.value.length==0)
 	{ alert("Name is Mandatory");
@@ -96,52 +84,55 @@ return false;
 
 }
 </script>
+<style type="text/css">
+body  {
+    background-image: url("m1.jpg");
+    background-color: #cccccc;
+}
+</style>
 
 
-
-<body align="center" bgcolor="#808080">
+<body>
 <marquee style="background:RED" behavior="alternate"><h2>WELCOME TO NEW CONNECTION</h2></marquee>
-<form name="customer_record1" action="customer_record.jsp "method="get" onsubmit="return f()">
+<form name="customer_record1" action="customer_record.jsp "method="post" onsubmit="return f()">
 <p align="center">
 <pre>	
                                                                                     PHONE NUMBER:  <input type="text" name="pno" required>											
 
-	               USERID: 	 <input type="text" name="uname" required>
+		                                                                          Name:    <input type="text" name="cname" required>
 
-		         Name: 	 <input type="text" name="cname" required>
+		                                                                    Occupation:    <input type="text" name="occupation" required>
 
-		     Occupation: <input type="text" name="occupation" required>
+		                                                                    ADDRESS:       <input type="text" name="address" required>
 
-		      ADDRESS:   <input type="text" name="address" required>
-
-			   PIN:   <input type="text" name="pin" required>
+			                                                                  PIN      <input type="text" name="pin" required>
 		
-		    Bank_Account: <input type="text" name="baccount" required>
+		                                                                  Bank_Account:    <input type="text" name="baccount" required>
 		    
-               CONNECTION  DATE   <input type="date" name="date" required> 
+                                                                                CONNECTION  DATE   <input type="date" name="date" required> 
 	  
-	                   DOB:  <input type="date" name="dob" required>
+	                                                                                DOB        <input type="date" name="dob" required>
 	                 
-	            card_number  <input type="password" name="cardno" required>
+	                                                                            card_number    <input type="password" name="cardno" required>
 	            
-	                 Amount  <input type="text" name="amount" required>
+	                                                                           Amount          <input type="text" name="amount" required>
 	                 
 		
-	            GENDER   <input type="radio" name="m" value="Male" checked="true"/> Male  <input type="radio" name="m" value="Female"/>Female  
+	                                                                               GENDER     <input type="radio" name="m" value="Male" checked> Male  <input type="radio" name="m" value="Female"/>Female  
 					   
-					             <input type="submit" name="submit" value="SUBMIT">
-		<%
+					                                                                          <input type="submit" name="submit" value="SUBMIT">
+		             <%
 		 HttpSession ses=request.getSession(false);  
 		 String user = (String)ses.getAttribute("user");
 		 
 		 HttpSession ses1=request.getSession();  
 		 ses1.setAttribute("user", user);
 		 
-		 //out.println(user); 
- 		  %>			             
+		 out.println(user); 
+ 		  %>	
 					             
-				<a href = "RandomBillNumber.jsp">Generate Your Bill Number.</a>	   
-				<form> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> </form> 
+				                                                                        <a href = "RandomBillNumber.jsp">Generate Your Bill Number.</a>	   
+				                                                                                      <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> 
 			  
 																
 
@@ -150,9 +141,7 @@ return false;
 																				
 																				  	
 
-                                                                                  
-
-</p>
+                                                                               
 </form>
 </body>
 </html>

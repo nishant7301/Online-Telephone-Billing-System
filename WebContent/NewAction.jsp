@@ -9,10 +9,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-
 </head>
-<body bgcolor="#808080">
+<style>
+body  {
+    background-image: url("m1.jpg");
+    background-color: #cccccc;
+}
+
+
+</style>
+<body>
 <%@ page import="java.sql.*"%>
 	<%@ page import="javax.sql.*"%>
 	<%
@@ -31,6 +37,7 @@ int pin=0;
 String date=null;
 String occupation=null;
 String baccount=null;
+String bill_no=null;
 %>
 <table class="table">
 <tr class="thead-dark">
@@ -43,7 +50,8 @@ String baccount=null;
   <th>PIN</th>
     <th>DOB</th>
   <th>BANK ACCOUNT</th>
-    <th>DATE</th>
+    <th>CONNECTION DATE</th>
+    <th>BILL NUMBER</th>
   
 </tr>
 
@@ -60,6 +68,7 @@ String baccount=null;
 			          pin=rs2.getInt("pin");
 			           baccount=rs2.getString("baccount");
 			            date=rs2.getString("date");
+			            bill_no=rs2.getString("bill_no");
 			          
 		}
 %>
@@ -67,13 +76,14 @@ String baccount=null;
    <td><% out.println(user);%></td>
     <td><% out.println(c_name);%></td>
     <td><%out.println(pno); %></td> 
-    <td><%out.println(occupation); %></td> 
     <td><%out.println(gender); %></td>
+    <td><%out.println(address); %></td>
+     <td><%out.println(occupation); %></td>
+     <td><%out.println(pin); %></td> 
     <td><%out.println(dob); %></td>
-     <td><%out.println(address); %></td>
-    <td><%out.println(pin); %></td>
-    <td><%out.println(baccount); %></td>
+        <td><%out.println(baccount); %></td>
     <td><%out.println(date); %></td>
+     <td><%out.println(bill_no); %></td>
     
     
   </tr>
