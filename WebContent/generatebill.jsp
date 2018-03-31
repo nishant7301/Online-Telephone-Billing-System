@@ -57,7 +57,7 @@ body  {
 }
 
 </style>
-<body bgcolor="#808080">
+<body>
 <h1>Bill Details:-</h1>
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
@@ -136,41 +136,6 @@ ResultSet r=st.executeQuery("select * from cutomer_record where uname='"+user+"'
 else
 {
 	out.println("Invalid Mobile number");
-}
-Statement st1= con.createStatement();
-ResultSet rs3=st.executeQuery("select * from gsmbill where pno='"+pno1+"' and uname='"+user+"'");
-if(rs3.next())
-{
-int n=1;
-for( n=1;n<=3;n++)
-{
-	switch(n){
-	 case 3:
-	        out.println("<br/>Gsm Money:");
-	        out.println(rs3.getString(n));
-	         out.println("<br/>");
-	        out.println("<br/>");
-	        break;
-	}
-}
-
-}
-Statement st2= con.createStatement();
-ResultSet rs4=st.executeQuery("select * from wcdmabill where pno='"+pno1+"' and uname='"+user+"'");
-if(rs4.next())
-{
-int i=1;
-for( i=1;i<=3;i++)
-{
-	switch(i){
-	 case 3:
-	        out.println("<br/>WCDMA Money:");
-	        out.println(rs4.getString(i));
-	         out.println("<br/>");
-	        out.println("<br/>");
-	        break;
-	}
-}
 }
 	}
 	else{

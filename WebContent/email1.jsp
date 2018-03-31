@@ -6,6 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>email updation</title>
 </head>
+<style>
+body
+{
+background-image: url("m1.jpg");
+    background-color: #cccccc;
+}
+</style>
 <body>
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
@@ -22,7 +29,7 @@ ResultSet rs=st.executeQuery("select * from registration where email='"+email+"'
 if(rs.next()) 
 { 
 	int j1=st.executeUpdate("update registration  set  email='"+em1+"' where uname='"+uname+"'"); 
-	out.println("email is successfully inserted \n");
+	out.println("email is successfully Updated\n");
 
 }
 else

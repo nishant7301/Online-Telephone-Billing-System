@@ -32,7 +32,7 @@ padding
 	  ResultSet n2=st.executeQuery("select * from cutomer_record where uname='"+uname+"'");	
   while(n2.next())
   {
-	  out.println("hi");
+	 
 	pno1=n2.getString("pno");
   }
   

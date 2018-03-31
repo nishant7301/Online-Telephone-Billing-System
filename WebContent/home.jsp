@@ -87,10 +87,10 @@
 <marquee behavior="alternate" style="background:RED"><h3>Telephone Billing System</h3></marquee>
 <div class="container-fluid bg-1 text-center">
   <img src="tele.jpg" class="center" style="display:inline" width="35%" height="50%">
-  <center>
+  <h2>
   <a href="user.html" class="button">USER</a>
   <a href="Admin1.jsp" class="button">ADMIN</a>
-  </center>
+  </h2>
 
 </div>
 

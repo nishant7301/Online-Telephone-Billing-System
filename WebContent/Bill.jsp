@@ -149,21 +149,21 @@ int ISD = 0;
          
          <div class = "col-md-3 rate">
               
-              <h4> Local    </h4><%out.println(l1);%>
+              <h4> Local(in paise)</h4><%out.println(l1);%>
               
          </div>
          <div class = "col-md-1"></div>
          
          <div class = "col-md-3 rate">
               
-              <h4> STD    </h4><%out.println(l2);%>
+              <h4> STD(in paise)   </h4><%out.println(l2);%>
               
          </div>
                   <div class = "col-md-1"></div>
          
          <div class = "col-md-3 rate">
               
-              <h4> ISD    </h4><%out.println(l3);%>
+              <h4> ISD(in paise)</h4><%out.println(l3);%>
               
          </div>
                  <div class = "col-md-1"></div>

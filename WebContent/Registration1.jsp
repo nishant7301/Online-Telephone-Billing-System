@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
 <script>
 function check()
 {
@@ -59,15 +62,9 @@ body  {
     background-color: #cccccc;
 }
 </style>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-</head>
 <body>
 <marquee style="background:RED" behavior="alternate"><h2>WELCOME TO NEW REGISTRATION</h2></marquee>
-
 <form  name="Registration1" action="registration.jsp" method="post" onsubmit="return check()">
-<input type="hidden" name="ID" value="INSERT">
-
 <p align="center">
 
 <pre>

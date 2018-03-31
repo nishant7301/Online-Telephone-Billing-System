@@ -71,7 +71,14 @@ body  {
     background-image: url("4.jpg");
     background-color: #cccccc;
 }
-
+.visible a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.visible a.active {
+  background-color: #4CAF50;
+  color: white;
+}
 
 </style>
 </head>
@@ -81,7 +88,7 @@ body  {
 <div class = "row">
 <div class = "col-sm-4 visible" id="sidebar">
 <ul>
-        <li><a href="Admin1.jsp">ADMIN HOME</a></li>
+        <li><a class="active" href="Admin1.jsp">ADMIN HOME</a></li>
         <li><a href="listuser.jsp">ACTIVE USER LIST</a></li>
       <li><a href="meter1.jsp">CALL METER ENTERY</a></li>
       <li><a href="GsmMeter.jsp">GSM METER ENTERY</a></li>

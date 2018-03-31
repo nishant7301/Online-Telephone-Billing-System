@@ -58,6 +58,14 @@ width:180px;
 padding:10px;
 text-decoration:none;
 }
+.visible a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.visible a.active {
+  background-color: #4CAF50;
+  color: white;
+}
 
 </style>
 </head>
@@ -132,14 +140,15 @@ while(rs.next())
 <ul>
  <li><a href="#"><mark>DASHBOARD</mark></a></li>
         <li><a href="home.jsp">Home</a></li>
+           <li><a class ="btn active" href="customer_record1.jsp">ADD CONNECTION</a></li>
+
         <li><a href = "call_history.jsp">CALL HISTORY</a></li>
         <li><a href = "gsmhistory.jsp">DATA HISTORY</a></li>
       <li><a href="Bill.jsp">VIEW VOICE CALL BILL</a></li>
       <li><a href="Gsmbill.jsp">VIEW GSM  BILL</a></li>
       <li><a href="wcdmabill.jsp">VIEW WCDMA  BILL</a></li>
        <li><a href="generatebill1.jsp">GENERATE PDF BILL</a></li>
-           <li><a href="customer_record1.jsp">ADD CONNECTION</a></li>
-        <li><a href="profile1.jsp">UPDATE PROFILE</a></li>
+                <li><a href="profile1.jsp">UPDATE PROFILE</a></li>
         <li><a href="reset1.jsp">RESET PASSWORD</a></li>
                 <li><a href="email.jsp">UPDATE EMAIL</a></li>
         <li><a href="Login1.jsp">LOG OUT</a></li>

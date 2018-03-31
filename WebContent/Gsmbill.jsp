@@ -105,9 +105,13 @@ catch(Exception e)
 out.println(e);	
 }
 %>
-                                    <br><br><form> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> </form> 
+                                     
 <br>
-<input type="button" value="pay now" onclick="window.location.href='http://localhost:8080/login/gsmpayment.jsp'" /> 	
+<center> <input type="button" value="Bill generate" onclick="window.location.href='http://localhost:8080/login/gsmpdf.jsp'" /> 
+<input type="button" value="pay now" onclick="window.location.href='http://localhost:8080/login/gsmpayment.jsp'" /> 
+
+<br><br><form> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> </form>
+	</center>
                              <br>		
 </body>
 </html>

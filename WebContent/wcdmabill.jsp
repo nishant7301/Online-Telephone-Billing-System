@@ -17,6 +17,7 @@ body  {
     background-color: #cccccc;
 }
 </style>
+<h2> Wcdma Bill Details:-</h2>
 <body>
 <%@ page import="java.sql.*"%>
 	<%@ page import="javax.sql.*"%>
@@ -98,8 +99,11 @@ else
 	response.sendRedirect("message.jsp"); 
 }
 %>
+<center>
                                     <br><br><form> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> </form> 
-<br><br> 			
+<br><br> 
+ <form> <input type="button" value="GENERATE BILL" onclick="window.location.href='http://localhost:8080/login/wcdmapdf.jsp'" /> </form>  						
  <br><br><form> <input type="button" value="PAY NOW" onclick="window.location.href='http://localhost:8080/login/wcdmapayment1.jsp'" /> </form>
+ </center>
 </body>
 </html>

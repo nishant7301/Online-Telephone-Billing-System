@@ -89,6 +89,7 @@ body  {
 </style>
 </head>
 <body>
+                                                         <h2 align="right">Current Time: <%= java.util.Calendar.getInstance().getTime() %></h2>
 <div id="sidebar"  class="visible">
 <ul>
   

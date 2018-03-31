@@ -32,7 +32,7 @@ Random rand = new Random();
   ResultSet r=st.executeQuery("select * from cutomer_record where uname='"+user+"'");
   if(r.next())
   {
-	  ResultSet r1=st.executeQuery("select * from cutomer_record where uname='"+user+"' and bill_no is null");
+	  ResultSet r1=st.executeQuery("select * from cutomer_record where uname='"+user+"' and bill_no ='"+null+"'");
   while(r1.next())
   {
 	  String user_name = r1.getString("uname");
@@ -46,7 +46,7 @@ Random rand = new Random();
 		  }
 	  }
   }
-out.println("already taken bill_number");
+    out.println("already taken bill_number");
   }
   else
   {
