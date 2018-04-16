@@ -196,6 +196,7 @@ int ISD = 0;
 <td><% out.println(Isdmt);%></td>
 </tr>
 <th> </th>
+
 <td> </td>
 
 <td><% out.println("TOTAL  :" + (localmt+stdmt+Isdmt));%></td>

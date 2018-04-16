@@ -4,8 +4,9 @@
 <html>
 <head>
 <style type="text/css">
-body{
-	background-color:#808080
+body  {
+    background-image: url("m1.jpg");
+    background-color: #cccccc;
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">

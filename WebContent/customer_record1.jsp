@@ -1,4 +1,6 @@
 <html>
+<meta charset="ISO-8859-1">
+<title>User Page</title>
 <script>
 function f()
 {
@@ -81,10 +83,18 @@ if(isNaN(document.customer_record1.amount.value))
 {alert("Amount should contain numerics only");
 return false;
 }
-
 }
+function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+
 </script>
-<style type="text/css">
+  <style>
 body  {
     background-image: url("m1.jpg");
     background-color: #cccccc;
@@ -95,32 +105,31 @@ body  {
 <body>
 <marquee style="background:RED" behavior="alternate"><h2>WELCOME TO NEW CONNECTION</h2></marquee>
 <form name="customer_record1" action="customer_record.jsp "method="post" onsubmit="return f()">
-<p align="center">
 <pre>	
                                                                                     PHONE NUMBER:  <input type="text" name="pno" required>											
 
-		                                                                          Name:    <input type="text" name="cname" required>
+		                                                                    Name           <input type="text" name="cname" required>
 
-		                                                                    Occupation:    <input type="text" name="occupation" required>
+		                                                                    Occupation     <input type="text" name="occupation" required>
 
-		                                                                    ADDRESS:       <input type="text" name="address" required>
+		                                                                    ADDRESS        <input type="text" name="address" required>
 
-			                                                                  PIN      <input type="text" name="pin" required>
+			                                                            PIN            <input type="text" name="pin" required>
 		
 		                                                                  Bank_Account:    <input type="text" name="baccount" required>
-		    
-                                                                                CONNECTION  DATE   <input type="date" name="date" required> 
+		 
+	                                                                          card_number      <input type="password" name="cardno" id="myInput" required>  <input type="checkbox" onclick="myFunction()">Show card Number			
+	            
+	                                                                           Amount          <input type="text" name="amount" required>
+	                                                                           
+	                                                                        CONNECTION DATE    <input type="date" name="date" required> 
 	  
 	                                                                                DOB        <input type="date" name="dob" required>
 	                 
-	                                                                            card_number    <input type="password" name="cardno" required>
-	            
-	                                                                           Amount          <input type="text" name="amount" required>
-	                 
-		
 	                                                                               GENDER     <input type="radio" name="m" value="Male" checked> Male  <input type="radio" name="m" value="Female"/>Female  
 					   
-					                                                                          <input type="submit" name="submit" value="SUBMIT">
+					                                                               <input type="submit" name="submit" value="SUBMIT">  <button type="reset" value="Reset">Reset</button>
+					                                                                          
 		             <%
 		 HttpSession ses=request.getSession(false);  
 		 String user = (String)ses.getAttribute("user");
@@ -128,7 +137,6 @@ body  {
 		 HttpSession ses1=request.getSession();  
 		 ses1.setAttribute("user", user);
 		 
-		 out.println(user); 
  		  %>	
 					             
 				                                                                        <a href = "RandomBillNumber.jsp">Generate Your Bill Number.</a>	   

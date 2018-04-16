@@ -13,10 +13,22 @@ margin:0px;
 padding:0px;
 font-family:"Helvetica Neue",Helvetica,Arial;
 }
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
 #sidebar{
 background:blue;
 width:200px;
-height:110%;
+height:130%;
 display:block;
 position:absolute;
 left:-200px;
@@ -65,10 +77,34 @@ text-decoration:none;
 .visible a.active {
   background-color: #4CAF50;
   color: white;
+} 
+body
+{
+background-image:url("images.jpg");
 }
-
+.image-upload > input
+{
+    display: none;
+}
+.avatar {
+    vertical-align: middle;
+    width: 120px;
+    height: 120px;
+    border-radius: 80%;
+}
 </style>
 </head>
+<script>
+$(document).ready(function(){
+	$('#sidebar-btn').click(function(){
+		$('#sidebar').addClass('visible');
+			});
+	});
+$("#image id").click(function(){
+    $("#input id").click();
+});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <body>
 		<%@ page import="java.sql.*"%>
 	<%@ page import="javax.sql.*"%>
@@ -83,7 +119,6 @@ Class.forName("com.mysql.jdbc.Driver");
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/nishant?autoReconnect=true&useSSL=false","root","root"); 
 Statement st= con.createStatement();
 ResultSet rs=st.executeQuery("select * from cutomer_record ");
-
 String c_name = null;
 String mobile = null;
 String occupation = null;
@@ -134,15 +169,13 @@ while(rs.next())
 
 %>
 <marquee direction="right" behavior="alternate" style="background:RED"><h4><%out.print("WELCOME "+uname);%></h4></marquee>
-<div class = "row" style ="background: url(d1.jpg) blue;">
-<div class ="col-sm-4 visible" id="sidebar" >
-
+<div class ="visible" id="sidebar" >
 <ul>
  <li><a href="#"><mark>DASHBOARD</mark></a></li>
         <li><a href="home.jsp">Home</a></li>
            <li><a class ="btn active" href="customer_record1.jsp">ADD CONNECTION</a></li>
-
         <li><a href = "call_history.jsp">CALL HISTORY</a></li>
+         <li><a href = "payment_history.jsp">PAYMENT HISTORY</a></li>     
         <li><a href = "gsmhistory.jsp">DATA HISTORY</a></li>
       <li><a href="Bill.jsp">VIEW VOICE CALL BILL</a></li>
       <li><a href="Gsmbill.jsp">VIEW GSM  BILL</a></li>
@@ -150,14 +183,21 @@ while(rs.next())
        <li><a href="generatebill1.jsp">GENERATE PDF BILL</a></li>
                 <li><a href="profile1.jsp">UPDATE PROFILE</a></li>
         <li><a href="reset1.jsp">RESET PASSWORD</a></li>
-                <li><a href="email.jsp">UPDATE EMAIL</a></li>
+                 <li><a href="email.jsp">UPDATE EMAIL</a></li>
+                  <li><a href="help.jsp">HELP</a></li>
         <li><a href="Login1.jsp">LOG OUT</a></li>
 </ul>
-
 </div>
-<div class ="col-sm-4"></div>
- 
-<div class ="col-sm-7" style = "margin:2px;border-radius:10px;">
+<div class="col-sm-6"></div>
+<div class="image-upload">
+    <label for="file-input">
+        <img src="placeholder.jpg" class="avatar">
+    </label>
+
+    <input id="file-input" type="file"/>
+</div>
+<div class ="col-sm-7" ></div>
+<div class ="col-sm-4" style = "margin:2px;border-radius:10px;">
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px" >  UserId : <% out.print(uname);%></h3>
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px" >  Customer Name : <% out.print(c_name);%></h3>
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px" >  Gender : <% out.print(gender);%></h3>
@@ -167,18 +207,11 @@ while(rs.next())
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px">  Bank Account Details : <% out.print(bank_account);%></h3>
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px">  Email ID: <% out.print(email);%></h3>
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px">  Connection Date: <% out.print(date);%></h3>
-<h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px">  Bill Number: <% out.print(bill_no);%></h3>
+<h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px">  Bill Number: <% out.print(bill_no);%> <a href="RandomBillNumber.jsp" class="button">Generate Bill Number</a></h3>  
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px">  Account Balance: <% out.print(balance);%></h3>
 <br>
 <br>
 </div>
-</div>
-<div class = "row" style ="background: url(d1.jpg) blue;">
-<div class ="col-xs-4"></div>
-<div class = "col-xs-8">
-<img src="d1.jpg" class="img-responsive img-rectangle" style="display:inline" alt="121" width="70%" height="100%" align="right">
-</div>
 
-</div>
 </body>
 </html>

@@ -29,7 +29,7 @@ return false;
           <pre>
                                                                         PHONE NUMBER  <input type="text" name="pno" required> 
                
-                                                                                             <input type="submit" value="insert">  <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />	
+                                                                                             <input type="submit" value="submit">  <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />	
                </pre>
 </form>
 

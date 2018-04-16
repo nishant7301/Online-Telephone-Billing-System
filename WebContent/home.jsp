@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Theme Simply Me</title>
+  <title>telephone billing home </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -28,7 +28,7 @@
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 20px 32px;
+    padding: 20px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -38,7 +38,7 @@
 }
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: red;
 }
 
 .topnav a {
@@ -59,6 +59,17 @@
   background-color: #4CAF50;
   color: white;
 }
+.brand-quote
+{
+color:#fff;
+font-family:'Patua One',cursive;
+font-size:50px;
+padding-center:20px;
+}
+body
+{
+background-image:url("pay1.jpg");
+}
   </style>
 </head>
 <body>
@@ -67,44 +78,15 @@
   <a href="Login1.jsp">Recharge</a>
   <a href="user.html">User Login</a>
   <a href="Admin1.jsp">Admin Login</a>
-  <a href="#">About</a>
+  <a href="about.jsp">About</a>
 </div>
-      <!--  
-      <a class="navbar-brand" href="#"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="home.jsp">HOME</a></li>
-         <li><a href="Login1.jsp">RECHARGE</a></li>
-        <li><a href="user.html">USER</a></li>
-         <li><a href="Admin1.jsp">ADMIN LOGIN</a></li>
-          <li><a href="#">CONTACT US</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
--->
-<marquee behavior="alternate" style="background:RED"><h3>Telephone Billing System</h3></marquee>
-<div class="container-fluid bg-1 text-center">
-  <img src="tele.jpg" class="center" style="display:inline" width="35%" height="50%">
-  <h2>
-  <a href="user.html" class="button">USER</a>
+<h1 align="center"><font color="red">Online Telephone Billing System</font></h1>
+<div class="row">
+</div>
+<div class="row"></div>
+  <h2 align="center">
+  <a  href="user.html" class="button">USER</a>
   <a href="Admin1.jsp" class="button">ADMIN</a>
-  </h2>
-
-</div>
-
-
-
-<div class="container-fluid bg-3 text-center">    
-  <div class="row">
-    <div class="col-sm-4"> 
-      <p>This software is  protected by copyright laws</p>
-    </div>
-    <div class="col-sm-4"> 
-    </div>
-  </div>
-</div>
-
+ </h2>
 </body>
 </html>

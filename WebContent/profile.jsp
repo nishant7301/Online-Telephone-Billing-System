@@ -65,7 +65,9 @@ body  {
 		                                      Bank_Account No    <input type="text" name="baccount" required>
 		
 
-                                                                             <input type="submit" name="submit" value="INSERT"> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />  
+                                                                             <input type="submit" name="submit">  <button type="reset" value="Reset">Reset</button> 
+                                                                             
+                                                                             <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />  
                          
 </pre>
 </form>

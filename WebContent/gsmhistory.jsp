@@ -15,6 +15,11 @@
 table,th,td{
 padding
 }
+body
+{
+background-image:url("m1.jpg");
+
+}
 </style>
 
 <%@ page import="java.sql.*"%>

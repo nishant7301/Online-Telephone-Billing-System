@@ -13,9 +13,17 @@ return false;
 }
 if((document.Login1.password.value.length<6))
 {
-alert("Please enter valid  password");
+alert("Please enter valid  password,Password atleast 6 digit");
 return false;
 }
+}
+function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
 }
 </script>
 <head>
@@ -28,7 +36,7 @@ padding:0px;
 font-family:"Helvetica Neue",Helvetica,Arial;
 }
 #sidebar{
-background:blue;
+background:#FFFACD;
 width:200px;
 height:100%;
 display:block;
@@ -55,6 +63,18 @@ background:#111;
 margin-bottom:5px;
 display:block;
 }
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 6px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+}  
 ul{
 margin:0px;
 padding:0px;
@@ -64,7 +84,7 @@ list-style:none;
 
 }
 ul li a{
-background:blue;
+background:red;
 color:#ccc;
 border-bottom:1px solid #111;
 display:block;
@@ -85,15 +105,17 @@ text-decoration:none;
 body  {
     background-image: url("m1.jpg");
     background-color: #cccccc;
+    font-size:100%;
+    
 }
 </style>
 </head>
-<body>
-                                                         <h2 align="right">Current Time: <%= java.util.Calendar.getInstance().getTime() %></h2>
+<body >
+                                                         
 <div id="sidebar"  class="visible">
 <ul>
   
-        <li><a href="#"><mark>DASHBOARD</mark></a></li>
+       <li><a href="#">DASHBOARD</a></li>
          <li><a href="home.jsp">HOME</a></li>
         <li><a href="Registration1.jsp">Sign UP</a></li>
       <li><a  class ="btn active" href="Login1.jsp">Login</a></li>
@@ -116,22 +138,21 @@ $(document).ready(function(){
 			});
 	});
 </script>
-<h1 align="center"><font>TELEPHONE BILLING SYSTEM</font></h1>
+<h1 align="center"><font>ONLINE TELEPHONE BILLING SYSTEM</font></h1>
 <form name="Login1"  action="login.jsp" method="post" onSubmit=" return checkForm()">
-<input type="hidden" name="ID" value="INSERT">
 <p align="center">
 <pre>
 
  
                                                       <strong>                  UserId   <input type="text" name="uname" required> </strong>
                           			  
-                                                      <strong>                  Password <input type="password" name="password" required></strong>				
+                                                      <strong>                  Password <input type="password" name="password" id="myInput" required></strong>  <input type="checkbox" onclick="myFunction()">Show Password				
 	   
 		                                                                           <button type="submit" name="submit">Submit</button>
 		                                          
-		              	                                         <strong >                  <a href="forget1.jsp">FORGET PASSWORD?</a> </strong> 
+		              	                                         <strong>           FORGET PASSWORD?<a href="forgetuserpass1.jsp" class="button">CLICK HERE</a> </strong> 
 	                        	                   
-						                          <strong>                 <b>New user</b> <a href="Registration1.jsp">Registration</a>
+						                          <strong>          <b>New User</b><a href="Registration1.jsp" class="button">  Click here</a>
 						           </strong>
 							</pre>
 							

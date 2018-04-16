@@ -3,6 +3,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}  
+</style>
 <script>
 function check()
 {
@@ -79,7 +93,9 @@ body  {
 		                                        Email Id*	<input type="text" name="email" required>
 
 					
-					                                  <input type="submit" name="submit" value="INSERT">    <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/user.html'" />
+					                                  <input type="submit" name="submit" value="submit">    <button type="reset" value="Reset">Reset</button>
+					                                  
+					                                  <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/user.html'" />
               													
 </pre>
                              

@@ -64,7 +64,7 @@ while(n7.next())
 	Gsm_Usage+=Gsm_Usage1;
 }
 double Gsm_money=0.0;
-Gsm_money=(Gsm_Usage*Gsm_rate)/100;
+Gsm_money=(Gsm_Usage*Gsm_rate)/1000;
 Statement st4 = con.createStatement();
 ResultSet rs=st4.executeQuery("select * from gsmbill where pno='"+pno1+"'");
 if(rs.next()){
@@ -81,7 +81,7 @@ st4.executeUpdate("insert into gsmbill values('"+pno1+"','"+uname+"','"+Gsm_mone
 <th>PHONE NUMBER</th>
 <th>USER NAME</th>
 <th>GSM USAGE(KB)</th>
-<th>GSM RATE(Paise/KB)</th>
+<th>GSM RATE(Paise/10KB)</th>
 <th>GSM DUE MONEY(RS)</th>
 </tr>
  <tr class="danger">

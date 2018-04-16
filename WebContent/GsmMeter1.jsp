@@ -10,6 +10,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>GSM rate entry</title>
 </head>
+<style>
+body
+{
+background-image: url("m1.jpg");
+}
+</style>
 <body>
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
@@ -23,6 +29,7 @@ Statement st= con.createStatement();
 ResultSet rs2=st.executeQuery("select * from cutomer_record where pno='"+pno+"' order by pno");
 if(rs2.next())
 { 
+st.executeUpdate("insert into gsmmeter values('"+pno+"','"+Gsm_Usage+"','"+date+"')");
 st.executeUpdate("insert into temp_gsmmeter values('"+pno+"','"+Gsm_Usage+"','"+date+"')");
 HttpSession ses=request.getSession();  
 out.println("meter entry successfully is done");
@@ -33,7 +40,7 @@ else
 }
 %>
 <br></br>
- <input type="button" value="HOME" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
+ <input type="button" value="ADMIN MENU" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
 <br></br>    
                                                                                   <input type="button" value="LOG OUT" onclick="window.location.href='http://localhost:8080/login/Admin1.jsp'" />
 </body>

@@ -51,7 +51,7 @@ body  {
                                                  
                                                  ConfPassword <input type="password" name="confpassword" required>
 
-					                     <input type="submit" name="submit" value="INSERT">      <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />
+					                        <input type="submit" name="submit" value="SUBMIT">      <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />
                                   
 					                             
 					                             

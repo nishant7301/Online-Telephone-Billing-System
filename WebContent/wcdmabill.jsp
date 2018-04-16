@@ -61,8 +61,8 @@ while(n7.next())
 	float Wcdma_Usage1 = n7.getFloat("Wcdma_Usage");
 	Wcdma_Usage+=Wcdma_Usage1;
 }
-double Wcdma_money=0.0;
-Wcdma_money=(Wcdma_Usage*Wcdma_rate)/100;
+float Wcdma_money=0.0f;
+Wcdma_money=(Wcdma_Usage*Wcdma_rate)/1000;
 Statement st4 = con.createStatement();
 ResultSet rs=st4.executeQuery("select * from wcdmabill where pno='"+pno1+"'");
 if(rs.next()){
@@ -81,7 +81,7 @@ st4.executeUpdate("insert into wcdmabill values('"+pno1+"','"+uname+"','"+Wcdma_
 <th>PHONE NUMBER</th>
 <th>USER NAME</th>
 <th>WCDMA USAGE(KB)</th>
-<th>WCDMA RATE(Paise/KB)</th>
+<th>WCDMA RATE(Paise/5KB)</th>
 <th>WCDMA DUE MONEY (RS) </th>
 </tr>
  <tr class="danger">

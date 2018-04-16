@@ -77,6 +77,8 @@ body  {
      Statement st1= con.createStatement();
      ResultSet rs11=st1.executeQuery("select * from cutomer_record where uname='"+usr+"'");
      float amount_from_customer = 0.0f;
+     String bill_type="voice bill";
+     String mode="Online";
      try
      {
     	 if(rs11.next())
@@ -107,6 +109,7 @@ body  {
      	          int i = st.executeUpdate("update cutomer_record set Amount = "+ amount_from_customer + " where uname = '" + usr  + "'");
      	          if(i == 1)
      	        	  {
+     	        	 st.executeUpdate("insert into payment_history values('"+bill_type+"','"+mode+"','"+amount1+"','"+pno+"')");
      	        	    out.println("\n\nRecharge Succes !!"+"\n");
      	        	    out.println("\n\n" + amount1 + "Amount deducted"+"\n");
      	 int flag = st.executeUpdate("update bill_record set localmt = " + 0.00 + ", stdmt = " + 0.00 + ", Isdmt =" + 0.00 + ", total = '0' where uname = '" + usr +"'");          

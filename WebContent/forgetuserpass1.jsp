@@ -5,7 +5,7 @@
 <script type="text/javascript">
 function check()
 {
-	  var x = document.forms["forget1"]["email"].value;
+	  var x = document.forms["forgetuserpass1"]["email"].value;
 	    var atpos = x.indexOf("@");
 	    var dotpos = x.lastIndexOf(".");
 	    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
@@ -28,14 +28,14 @@ body  {
 <title>new password </title>
 </head>
 <body>
-<form  name="forget1" action="forget.jsp"  onsubmit="return check();" method="post">
+<form  name="forgetuserpass1" action="forgetuserpass.jsp"  onsubmit="return check();" method="post">
 
 <p align="center">
 
 <pre>
                                                                 Email: <input type="text" name="email">
 					
-					                                    <input type="submit" name="submit" value="submit">  <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/Admin1.jsp'" />  
+					                                    <input type="submit" name="submit" value="submit">  <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/Login1.jsp'" />  
 <br><br>         
 					                             
 					                             

@@ -2,17 +2,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>sidebar menu  </title>
+<title>user page</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
-body{
-margin:0px;
-padding:0px;
-font-family:"Helvetica Neue",Helvetica,Arial;
-}
 #sidebar{
 background:royalblue;
 width:200px;
@@ -45,15 +40,7 @@ ul{
 margin:0px;
 padding:0px;
 }
-table, th, td {
-    border: 2px solid black;
-    border-collapse: collapse;
-    align:center;
-    width:100%;
-    padding:15px;
-}
-tr:nth-child(even){
-background-color:royalblue;}
+
 ul li{
 list-style:none;
 
@@ -68,7 +55,7 @@ padding:10px;
 text-decoration:none;
 }
 body  {
-    background-image: url("4.jpg");
+    background-image: url("images.jpg");
     background-color: #cccccc;
 }
 .visible a:hover {
@@ -79,17 +66,24 @@ body  {
   background-color: #4CAF50;
   color: white;
 }
+.avatar {
+    vertical-align: middle;
+    width: 120px;
+    height: 120px;
+    border-radius: 80%;
+}
+
 
 </style>
 </head>
 <body>
 
 <marquee style="background:FUchsia" behavior="alternate"><h3>WELCOME TO ADMIN</h3></marquee>
-<div class = "row">
-<div class = "col-sm-4 visible" id="sidebar">
+<div class = "visible" id="sidebar">
 <ul>
         <li><a class="active" href="Admin1.jsp">ADMIN HOME</a></li>
         <li><a href="listuser.jsp">ACTIVE USER LIST</a></li>
+          <li><a href="payment_history2.jsp">USER PAYMENT HISTORY</a></li>
       <li><a href="meter1.jsp">CALL METER ENTERY</a></li>
       <li><a href="GsmMeter.jsp">GSM METER ENTERY</a></li>
       <li><a href="WcdmaMeter.jsp">WCDMA METER ENTERY</a></li>
@@ -99,11 +93,6 @@ body  {
          <li><a href="adreset1.jsp">RESET PASSWORD</a></li>
           <li><a href="Admin1.jsp">LOG OUT</a></li>
 </ul>
-</div>
-<div class = "colsm-8">
-
-
-</div>
 </div>
 
 
@@ -174,9 +163,12 @@ $(document).ready(function(){
 			});
 	});
 </script>
-<div class ="col-sm-4"></div>
- 
-<div class ="col-sm-7" style = "margin:2px;border-radius:10px;">
+<div class ="col-lg-7"></div>
+<div class="col-lg-5">
+<img src="photo.jpg" alt="Avatar" class="avatar">
+</div>
+<div class ="col-lg-6"></div>
+<div class ="col-sm-4" style = "margin:2px;border-radius:10px;">
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px" >  ADMIN ID : <% out.print(uname);%></h3>
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px" >  GENDER : <% out.print(gender);%></h3>
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px" >  OCCUPATION: <% out.print(occupation);%></h3>

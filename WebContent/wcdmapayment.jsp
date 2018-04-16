@@ -27,8 +27,10 @@ body  {
      Statement st= con.createStatement();
      Statement st1= con.createStatement();
      ResultSet rs11=st1.executeQuery("select * from cutomer_record where uname='"+usr+"'");
-     double amount_from_customer ;
-     double amount1=0.0;
+     float amount_from_customer ;
+     float amount1=0.0f;
+     String bill_type="3g Internet";
+     String mode="Online";
      try
      {
     	 if(rs11.next())
@@ -38,7 +40,7 @@ body  {
     	     
     	     while(rs2.next())
     	     {
-    	    	 amount1 = rs2.getDouble("Wcdma_money");
+    	    	 amount1 = rs2.getFloat("Wcdma_money");
     	    	 pno = rs2.getString("pno");
     	     } 
     	ResultSet rs1=st1.executeQuery("select * from cutomer_record where uname='"+usr+"'");
@@ -50,20 +52,21 @@ body  {
      		String cno=rs1.getString("card_no");
      			if(cno.equals(card_no))
      			{
-     		amount_from_customer = rs1.getDouble("Amount");  
+     		amount_from_customer = rs1.getFloat("Amount");  
      	     if(amount1 <= amount_from_customer )
      	     {
      	     	  amount_from_customer = amount_from_customer - amount1;
      	          int i = st.executeUpdate("update cutomer_record set Amount = "+ amount_from_customer + " where uname = '" + usr  + "'");
      	          if(i == 1)
      	        	  {
+     	        	 st.executeUpdate("insert into payment_history values('"+bill_type+"','"+mode+"','"+amount1+"','"+pno+"')");
      	        	    out.println("\n\nRecharge Succes !!"+"\n");
-     	        	    out.println("\n\n" + amount1 + "Amount deducted"+"\n");
+     	        	    out.println("\n\n" + amount1 + "   Amount deducted"+"\n");
      	                  int flag = st.executeUpdate("update wcdmabill set Wcdma_money="+0.0+" where pno='"+pno+"'");          
      	                if(flag > 0){   	
          	        	    int flag_customer_record = st.executeUpdate("update wcdmameter set Wcdma_Usage="+0+ " where pno = '" +pno+"'");
      	                	if(flag_customer_record > 0 ){
-     	                		out.println("Customer Wcdma data usage  Updated");
+     	                		out.println("");
      	                	}
      	                }
      	        	  }

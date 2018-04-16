@@ -33,7 +33,7 @@
 
 <style type="text/css">
 body  {
-    background-image: url("m1.jpg");
+    background-image: url("pay1.jpg");
     background-color: #cccccc;
 }
 </style>

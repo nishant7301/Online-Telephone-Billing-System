@@ -33,7 +33,7 @@
 
 <style type="text/css">
 body  {
-    background-image: url("m1.jpg");
+    background-image: url("pay1.jpg");
     background-color: #cccccc;
 }
 </style>
@@ -60,7 +60,7 @@ body  {
                                                        		    ses1.setAttribute("user", user);
                                                        		    
                                                                  %>
-					                                          <input type="submit" name="submit" value="SUBMIT">    <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> 
+					                                        <input type="submit" name="submit" value="SUBMIT">    <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> 
 		
 </pre>                                                                                
 </form>

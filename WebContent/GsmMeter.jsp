@@ -41,7 +41,7 @@ body  {
 </head>
 <body>
 <h1 align="center">WLCCOME TO GSM BILL ENTERY </h1>
-<form name="GsmMeter"  action="GsmMeter1.jsp" method="get" onSubmit=" return f1()">
+<form name="GsmMeter"  action="GsmMeter1.jsp" method="post" onSubmit=" return f1()">
 <p align="center">
 <pre>
                                                                     PHONE NO: <input type="text" name="pno" required> 

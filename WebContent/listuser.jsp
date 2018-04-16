@@ -1,8 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style>
+body  {
+    background-image: url("m1.jpg");
+    background-color: #cccccc;
+}
+.table {
+  overflow: hidden;
+  background-color: red;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 3px 1.5px;
+    cursor: pointer;
+}  
+</style>
+</head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>user list</title>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -12,9 +35,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <body>
-<div class = "colsm-8">
-</div>
-<marquee behavior="alternate" style=background:RED><h1>Active User list</h1></marquee>
+<input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />         <h5 align="right"> User id <input type="text" placeholder="Search.."><button type="submit">Submit</button></h5>  <h1 align="center"><font color="RED">Active User list</font></h1> 
 <%@ page import="java.sql.*"%>
 	<%@ page import="javax.sql.*"%> 
 <%
@@ -36,6 +57,8 @@ String address = null;
 String pin = null;
 String email=null;
 String Bill_no=null;
+
+
 %>
 
 <table class="table">
@@ -48,7 +71,10 @@ String Bill_no=null;
   <th>OCCUPATION</th>
   <th>EMAIL</th>
   <th>BILL NUMBER</th>
-  <th>DUE AMOUNT</th>
+  <th>VOICE CALL DUE</th>
+  <th>GSM DUE</th>
+  <th>WCDMA DUE</th>
+  <th>VOICE METER ENTERY</th>
   
 </tr>
 <% 
@@ -64,9 +90,11 @@ while(rs.next())
 		 address = rs.getString("address");
 		 pin = rs.getString("pin");
 		 Bill_no=rs.getString("bill_no");
+		 
 		 Statement st2= con.createStatement();
 		 ResultSet rs1=st2.executeQuery("select * from bill_record ");
-		 String due = "0";		 
+		 String due = "0.0";	
+		 
 		 while(rs1.next())
 		 { 
 			 String uname2 = rs1.getString("uname");
@@ -75,11 +103,33 @@ while(rs.next())
 			    due = rs1.getString("total");	 
 			 }
 		 }
+		 String gsm_due="0.0";
+		 ResultSet rs3=st2.executeQuery("select * from gsmbill where uname='"+user+"' ");
+		 while(rs3.next())
+		 { 
+			 String uname3 = rs3.getString("uname");
+			 if(uname3.equals(user))
+			 {
+			    gsm_due = rs3.getString("Gsm_money");	 
+			 }
+		 }
+		 String wcdma_due ="0.0";
+		 
+		 ResultSet rs4=st2.executeQuery("select * from wcdmabill where uname='"+user+"' ");
+		 while(rs4.next())
+		 { 
+			 String uname4 = rs4.getString("uname");
+			 if(uname4.equals(user))
+			 {
+			    wcdma_due = rs4.getString("Wcdma_money");	 
+			 }
+		 }
+
 		 ResultSet rs2=st2.executeQuery("select * from registration");
 		 while(rs2.next())
 		 {
-			 String uname3=rs2.getString("uname");
-			 if(uname3.equals(user)){
+			 String uname5=rs2.getString("uname");
+			 if(uname5.equals(user)){
 			email=rs2.getString("email");
 			 }
 		 }
@@ -97,6 +147,9 @@ while(rs.next())
      <td><%out.println(email); %></td>
      <td><%out.println(Bill_no); %></td>
     <td><%out.println(due); %></td>
+    <td><%out.println(gsm_due); %></td>
+    <td><%out.println(wcdma_due); %></td>
+    <td><a href="meter1.jsp" class="button">click Here</a></td>
   </tr>
 
 <%
@@ -104,7 +157,6 @@ while(rs.next())
 
 %>
 </table>
-<form> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" /> </form>
 
 </body>
 </html>

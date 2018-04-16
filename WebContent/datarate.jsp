@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"pageEncoding="ISO-8859-1"%>
 <html>
 <head>
-<title>DATA RATE ENTERY</title>
+<title>DATA RATE ENTRY</title>
 <script type="text/javascript">
 function f1()
 {
@@ -25,22 +24,36 @@ body  {
     background-image: url("m1.jpg");
     background-color: #cccccc;
 }
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+ 
+    
+}
 </style>
 <body>
 <h1 align="center">WLCCOME TO DATA RATE ENTERY </h1>
-<form name="DataRate"  action="Datarate1.jsp" method="get" onSubmit=" return f1()">
+<form name="DataRate"  action="Datarate1.jsp" method="post" onSubmit=" return f1()">
 <p align="center">
 <pre>
 
                                                                         DATA ID    :   <input type="text" name="data_id" required>                    
          
-                                                                        GSM RATE   :   <input type="text" name="Gsm_rate" required> KB/paise
+                                                                        GSM RATE   :   <input type="text" name="Gsm_rate" required>Paise/KB
                                        
-                                                                        WCDMA RATE :   <input type="text" name="Wcdma_rate" required> KB/paise
+                                                                        WCDMA RATE :   <input type="text" name="Wcdma_rate" required>Paise/KB
                               
                                                                                        <input type="submit" name="submit" value="SUBMIT">   <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
                                                 	           
-                          			  
+                          			                                                   <strong><a href="forget_callid1.jsp" class="button">FORGET DATA_ID?</a>	</strong>
                     
                     </pre>
                    
