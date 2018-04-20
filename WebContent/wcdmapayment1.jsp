@@ -36,6 +36,47 @@ body  {
     background-image: url("pay1.jpg");
     background-color: #cccccc;
 }
+input[type=text] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+
+  input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+ input[type=password] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+  input[type=submit] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
 </style>
 </head>
 <body>
@@ -44,14 +85,13 @@ body  {
 <form name="wcdmapayment1"  action="wcdmapayment.jsp" method="post" onsubmit=" return f1()">
 <p>
 <pre>
-
- 
-
-
-                                                                Bill Number  <input type="text" name="bnum" required>
-
-                                                                Card no      <input type="password" name="cardno" required >
-                
+                                                                 <label for="bnum">Bill NUMBER:</label>
+                                                                <input type="text" id="bnum" name="bnum" required>
+                                                                <label for="password">CARD NUMBER:</label>
+                                                                <input type="password" name="cardno" required >
+                                                                <input type="submit" name="submit" value="SUBMIT">        <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> 
+                                                                
+                                                                
                                                                 <%
                                                                 HttpSession ses=request.getSession(false);  
                                                        		    String user = (String)ses.getAttribute("user");
@@ -60,7 +100,7 @@ body  {
                                                        		    ses1.setAttribute("user", user);
                                                        		    
                                                                  %>
-					                                       <input type="submit" name="submit" value="SUBMIT">    <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> 
+					            
 		
 </pre>                                                                                
 </form>

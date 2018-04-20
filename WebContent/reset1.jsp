@@ -31,6 +31,36 @@ body  {
     background-image: url("m1.jpg");
     background-color: #cccccc;
 }
+input[type=password] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+   input[type=submit] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+   input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
 </style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -44,14 +74,13 @@ body  {
 <p >
 
 <pre>
-
-                                                 Old Password <input type="password" name="password1" required>
-                                          
-                                                 New Password <input type="password" name="newpassword" required>
-                                                 
-                                                 ConfPassword <input type="password" name="confpassword" required>
-
-					                        <input type="submit" name="submit" value="SUBMIT">      <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />
+                                                                     <label for="password1">PASSWORD:</label>
+                                                                     <input type="password" name="password1" required>
+                                                                     <label for="newpassword">NEW PASSWORD:</label>
+                                                                     <input type="password" name="newpassword" required>
+                                                                     <label for="confpassword">CONFIRM PASSWORD:</label>
+                                                                     <input type="password" name="confpassword" required>
+                                                                     <input type="submit" name="submit" value="SUBMIT">      <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />
                                   
 					                             
 					                             

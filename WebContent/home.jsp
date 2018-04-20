@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
   <style>
   .container-fluid {
       padding-top: 70px;
@@ -84,9 +87,8 @@ background-image:url("pay1.jpg");
 <div class="row">
 </div>
 <div class="row"></div>
-  <h2 align="center">
-  <a  href="user.html" class="button">USER</a>
-  <a href="Admin1.jsp" class="button">ADMIN</a>
- </h2>
+  <h5 align="center">
+  <i class="fa fa-user-circle-o" style="font-size:50px;color:red"><a href="user.html">User</a></i>  <i class="fa fa-user-circle-o" style="font-size:50px;color:green"><a href="Admin1.jsp">Admin</a></i>
+ </h5>
 </body>
 </html>

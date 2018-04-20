@@ -27,6 +27,9 @@ function myFunction() {
 }
 </script>
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
 <meta charset="ISO-8859-1">
 <title>Login Page </title>
 <style type="text/css">
@@ -36,7 +39,7 @@ padding:0px;
 font-family:"Helvetica Neue",Helvetica,Arial;
 }
 #sidebar{
-background:#FFFACD;
+background:#7B68EE;
 width:200px;
 height:100%;
 display:block;
@@ -103,9 +106,44 @@ text-decoration:none;
 }
 
 body  {
-    background-image: url("m1.jpg");
+    background-image: url("login1.jpg");
     background-color: #cccccc;
-    font-size:100%;
+    height: 50%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+ input[type=text] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+    
+}
+ input[type=password] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+    
+}
+ input[type=submit] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
     
 }
 </style>
@@ -139,31 +177,25 @@ $(document).ready(function(){
 	});
 </script>
 <h1 align="center"><font>ONLINE TELEPHONE BILLING SYSTEM</font></h1>
-<form name="Login1"  action="login.jsp" method="post" onSubmit=" return checkForm()">
-<p align="center">
-<pre>
-
+             
  
-                                                      <strong>                  UserId   <input type="text" name="uname" required> </strong>
-                          			  
-                                                      <strong>                  Password <input type="password" name="password" id="myInput" required></strong>  <input type="checkbox" onclick="myFunction()">Show Password				
-	   
-		                                                                           <button type="submit" name="submit">Submit</button>
-		                                          
-		              	                                         <strong>           FORGET PASSWORD?<a href="forgetuserpass1.jsp" class="button">CLICK HERE</a> </strong> 
+
+<form name="Login1"  action="login.jsp" method="post" onSubmit=" return checkForm()">
+<p align="center">                                                                                         <h2 align="center">Member Login:</h2>
+                                                                                                       <h2 align="center">  <i class="fa fa-users" style="font-size:60px;color:red" aria-hidden="true"></i></h2>                                                                                                
+                                    <pre>                                                                      
+                                                                              <label for="uname">User Name:</label> <i class="fa fa-user" aria-hidden="true"></i>
+                                                                              <input type="text"  name="uname" required>
+                                                                              <label for="password">PASSWORD:</label><i class="fa fa-lock"></i>
+                                                                              <input type="password" id1="password" name="password" id="myInput" required> <input type="checkbox" onclick="myFunction()">Show Password						
+		                                                                       
+		                                                                          <input type="submit" name="submit" value="SUBMIT">
+		                                                                   <strong>       FORGET PASSWORD?<a href="forgetuserpass1.jsp" class="button">CLICK HERE</a> </strong> 
 	                        	                   
-						                          <strong>          <b>New User</b><a href="Registration1.jsp" class="button">  Click here</a>
-						           </strong>
-							</pre>
-							
-							
-						
-							
-					
-							
-							
+						                                                <strong><b>  New User</b><a href="Registration1.jsp" class="button">  Click here</a>
+						                                                                 </strong>
+							</pre>							
+						                                              					
 							</form>
-
-
 </body>
 </html>

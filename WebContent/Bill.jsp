@@ -30,6 +30,16 @@ font-color:white;
 margin:8px;
 padding:5px;
 }
+input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
 .rate{
 background-color:white;
 border-radius:8px;

@@ -45,6 +45,58 @@ body  {
     background-image: url("m1.jpg");
     background-color: #cccccc;
 }
+input[type=text] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+
+  input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+ input[type=password] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+  input[type=submit] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+input[type=reset] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+
 </style>
 <head>
 <title>profile</title>
@@ -53,21 +105,16 @@ body  {
 <h2 align="center"><font color="RED">UPDATE INFORMATION</font></h2>
 <form name="profile" action="updateinfo.jsp" method="post" onsubmit="return f()">
 <pre>
-
-
-
-                                                        Occupation       <input type="text" name="occupation" required>
-                         
-                                                        ADDRESS          <input type="text" name="address" required>
-
-			                                   PIN           <input type="text" name="pin" required>
-		
-		                                      Bank_Account No    <input type="text" name="baccount" required>
-		
-
-                                                                             <input type="submit" name="submit">  <button type="reset" value="Reset">Reset</button> 
-                                                                             
-                                                                             <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />  
+                                                              <label for="occupation">OCCUPATION:</label>
+                                                              <input type="text" name="occupation" required>
+                                                              <label for="address">ADDRESS:</label>
+                                                              <input type="text" name="address" required>
+                                                              <label for="pin">PIN:</label>
+			                                      <input type="text" name="pin" required>
+		                                              <label for="baccount">BANK ACCOUNT:</label>
+		                                              <input type="text" name="baccount" required>
+		                                               <input type="submit" name="submit">  <button type="reset" value="Reset">RESET</button> 
+                                                               <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />  
                          
 </pre>
 </form>

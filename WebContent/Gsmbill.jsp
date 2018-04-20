@@ -16,6 +16,16 @@ body  {
     background-image: url("m1.jpg");
     background-color: #cccccc;
 }
+input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
 </style>
 <body>
 <h4>CURRENT GSM DUE DATA:</h4>

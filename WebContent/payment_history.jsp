@@ -33,6 +33,16 @@ body
 background-image:url("m1.jpg");
 
 }
+ input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
 </style>
 <body>
 <%@ page import ="java.sql.*" %>
@@ -124,7 +134,7 @@ while(n4.next())
   <center>
  <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> 
  
- <button onclick="myFunction()">Print Bill Details </button>
+                 <font color="red"><button onclick="myFunction()">Print Bill Details </button></font>
  
  </center>
 </div>			

@@ -24,6 +24,37 @@ body  {
     background-image: url("m1.jpg");
     background-color: #cccccc;
 }
+  input[type=submit] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+input[type=text] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+  input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+
 </style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -34,11 +65,9 @@ body  {
 <form name="generatebill1"  action="generatebill.jsp" method="post"  onsubmit="return check()">
 <p>
 <pre>
-                                      	
-                          			  
-                                                   PHONE NUMBER    <input type="text" name="pno" required>				
-	   
-		                                                    <input type="submit" name="submit" value="SUBMIT"> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />			
+                                      	                 <label for="pno">PHONE NUMBER:</label>
+                                      	                 <input type="text" name="pno" required>				
+                                      	                 <input type="submit" name="submit" value="SUBMIT">         <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />			
 		      
 							
 							

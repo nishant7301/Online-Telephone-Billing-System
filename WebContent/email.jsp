@@ -25,19 +25,69 @@ body  {
     background-image: url("m1.jpg");
     background-color: #cccccc;
 }
+input[type=email] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+
+  input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+ input[type=password] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+  input[type=submit] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+input[type=reset] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
 </style>
 <body>
 <h2 align="center">Welcome To Email Update</h2>
 <form name=email action="email1.jsp" method="post" onsubmit="return check()">
 <p align="center">
-<pre>
-                                                                     Old Email id <input type="email" name="email" required>
-        
-                                                                     new Email id <input type="email" name="em1" required>
-        
-                                                                 confirm Email id <input type="email" name="em2" required>
-                     
-                                                                                  <input type="submit" name="submit"> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />  
+<pre>                                                                     <label for="email">Old email id:</label>
+                                                                     <input type="email" name="email" required>
+                                                                     <label for="email">New email id:</label>
+                                                                     <input type="email" name="em1" required>
+                                                                     <label for="email">Confirm email id:</label>
+                                                                     <input type="email" name="em2" required>
+                                                                     <input type="submit" name="submit"> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />  
                          
 </pre>
 

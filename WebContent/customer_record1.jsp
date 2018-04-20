@@ -99,37 +99,89 @@ body  {
     background-image: url("m1.jpg");
     background-color: #cccccc;
 }
+input[type=text] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+
+  input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: green;
+    color: white;
+    
+}
+ input[type=password] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+  input[type=submit] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+input[type=date] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: red;
+    color: white;
+    
+}
 </style>
 
 
 <body>
 <marquee style="background:RED" behavior="alternate"><h2>WELCOME TO NEW CONNECTION</h2></marquee>
 <form name="customer_record1" action="customer_record.jsp "method="post" onsubmit="return f()">
-<pre>	
-                                                                                    PHONE NUMBER:  <input type="text" name="pno" required>											
-
-		                                                                    Name           <input type="text" name="cname" required>
-
-		                                                                    Occupation     <input type="text" name="occupation" required>
-
-		                                                                    ADDRESS        <input type="text" name="address" required>
-
-			                                                            PIN            <input type="text" name="pin" required>
-		
-		                                                                  Bank_Account:    <input type="text" name="baccount" required>
-		 
-	                                                                          card_number      <input type="password" name="cardno" id="myInput" required>  <input type="checkbox" onclick="myFunction()">Show card Number			
-	            
-	                                                                           Amount          <input type="text" name="amount" required>
-	                                                                           
-	                                                                        CONNECTION DATE    <input type="date" name="date" required> 
-	  
-	                                                                                DOB        <input type="date" name="dob" required>
-	                 
-	                                                                               GENDER     <input type="radio" name="m" value="Male" checked> Male  <input type="radio" name="m" value="Female"/>Female  
-					   
-					                                                               <input type="submit" name="submit" value="SUBMIT">  <button type="reset" value="Reset">Reset</button>
-					                                                                          
+ <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> <h3 align="center">ADD NEW CONNECTION HERE:-</h3>
+<pre>	                                                                            
+                                                                                   <label for="pno">PHONE NUMBER:</label>
+                                                                                   <input type="text" name="pno" required>											
+                                                                                   <label for="cname">CUSTOMER NAME:</label>
+                                                                                   <input type="text" name="cname" required>
+                                                                                   <label for="occupation">OCCUPATION:</label>
+                                                                                   <input type="text" name="occupation" required>
+                                                                                   <label for="address">ADDRESS:</label>
+                                                                                   <input type="text" name="address" required>
+                                                                                   <label for="pin">PIN:</label>
+                                                                                   <input type="text" name="pin" required>
+                                                                                   <label for="baccount">BANK ACCOUNT:</label>
+                                                                                   <input type="text" name="baccount" required>
+                                                                                   <label for="cardno">CARD NUMBER:</label>
+                                                                                   <input type="password" name="cardno" id="myInput" required>  <input type="checkbox" onclick="myFunction()">Show card Number			
+	                                                                           <label for="amount">AMOUNT:</label>
+	                                                                           <input type="text" name="amount" required>
+	                                                                           <label for="date">CONNECTION DATE:</label>
+	                                                                           <input type="date" name="date" required> 
+	                                                                           <label for="date">DATE BIRTH:</label>
+	                                                                           <input type="date" name="dob" required>
+	                                                                           <label for="m">GENDER:</label>
+	                                                                           <input type="radio" name="m" value="Male" checked> Male  <input type="radio" name="m" value="Female"/>Female  
+					                                           <input type="submit" name="submit" value="SUBMIT">  <button type="reset" value="Reset">Reset</button>
+					                                                                           
 		             <%
 		 HttpSession ses=request.getSession(false);  
 		 String user = (String)ses.getAttribute("user");
@@ -138,9 +190,8 @@ body  {
 		 ses1.setAttribute("user", user);
 		 
  		  %>	
-					             
-				                                                                        <a href = "RandomBillNumber.jsp">Generate Your Bill Number.</a>	   
-				                                                                                      <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> 
+	   
+				                                                                                    
 			  
 																
 

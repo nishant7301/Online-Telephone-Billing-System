@@ -34,10 +34,11 @@ function myFunction() {
 }	
 </script>
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta charset="ISO-8859-1">
 <style type="text/css">
 #sidebar{
-background:#FFFACD;
+background:grey;
 width:200px;
 height:180%;
 display:block;
@@ -103,8 +104,44 @@ text-decoration:none;
 }  
 
 body  {
-    background-image: url("m1.jpg");
+    background-image: url("admin.jpg");
     background-color: #cccccc;
+      height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    input[type=text] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+    
+}
+ input[type=password] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+    
+}
+ input[type=submit] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
 }
 </style>
 </head>
@@ -120,14 +157,16 @@ body  {
 </div> 
 <form name="Admin1"  action="admin.jsp" method="post" onSubmit=" return checkForm()">
 <p>
-<pre>                     
-                                                                    <strong>   UserId  <input type="text" name="uname" required> </strong>
-                          			  
-                                                                  <strong>    Password <input type="password" name="password" id="myInput" required></strong>  <input type="checkbox" onclick="myFunction()">Show Password						
-	   
-		                                                                       <input type="submit" name="submit" value="SUBMIT">
+<pre>                          
+
+                                                                    <label for="uname">User Name:</label><i class="fa fa-user" aria-hidden="true"></i>
+                                                                    <input type="text" id="fname" name="uname" required>
+                                                                    <label for="password">PASSWORD:</label><i class="fa fa-lock"></i>
+                                                                    <input type="password" id1="password" name="password" id="myInput" required> <input type="checkbox" onclick="myFunction()">Show Password						
+		                                                                       
+		                                                               <input type="submit" name="submit" value="SUBMIT">
 						                                                 
-						                            <strong>                FORGET PASSWORD?<a href="forget1.jsp" class="button">Click Here</a>	</strong>
+						                                            <strong> FORGET PASSWORD?<a href="forget1.jsp" class="button">Click Here</a>	</strong>
  
                                                                  
 							</pre>	

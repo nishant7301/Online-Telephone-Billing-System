@@ -7,6 +7,7 @@
 <title>WCDMA bill</title>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script type="text/javascript">
 var doc = new jsPDF();
 var specialElementHandlers = {
@@ -51,7 +52,7 @@ function myFunction() {
 }
 </script>
 <body>
-<h2>WCDMA Bill Details:-</h2>
+<h2 align="center">WCDMA Bill Details:-</h2>
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <div id="content">
@@ -67,6 +68,7 @@ ResultSet rs=st.executeQuery("select * from cutomer_record where uname='"+uname+
 String name=null;
 String address=null;
 int Bill=0;
+String email=null;
 String pno;
 float wcdma_money=0.0f;
 
@@ -84,6 +86,11 @@ if(rs.next())
 	if(rs3.next())
 	{
 		wcdma_money=rs3.getFloat("wcdma_money");
+		ResultSet rs1=st.executeQuery("select * from registration where uname='"+uname+"' ");
+		if(rs1.next())
+		{
+		 email=rs1.getString("email");
+		}
 	}
 	
 	}
@@ -100,13 +107,14 @@ else
 }
 
 %>
-<div class ="col-sm-4"></div>
+<div class ="col-sm-3"></div>
  
-<div class ="col-sm-7" style = "margin:2px;border-radius:10px;">
+<div class ="col-sm-8" style = "margin:2px;border-radius:10px;">
 <h3 align="center" style="background-color:white;padding:2px;margin:3px;border-radius:10px" >  BILL NUMBER : <% out.print(Bill);%></h3>
 <h3 align="center" style="background-color:white;padding:2px;margin:3px;border-radius:10px" >  User name : <% out.print(uname);%></h3>
 <h3 align="center" style="background-color:white;padding:2px;margin:3px;border-radius:10px" >  Customer Name : <% out.print(name);%></h3>
 <h3 align="center" style="background-color:white;padding:2px;margin:3px;border-radius:10px" >  ADDRESS : <% out.print(address);%></h3>
+<h3 align="center" style="background-color:white;padding:2px;margin:3px;border-radius:10px" >  EMAIL : <% out.print(email);%></h3>
 <h3 align="center" style="background-color:white;padding:2px;margin:3px;border-radius:10px">   WCDMA MONEY : <% out.print(wcdma_money);%></h3>
 
 <br>

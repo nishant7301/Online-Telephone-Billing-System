@@ -188,14 +188,6 @@ while(rs.next())
         <li><a href="Login1.jsp">LOG OUT</a></li>
 </ul>
 </div>
-<div class="col-sm-6"></div>
-<div class="image-upload">
-    <label for="file-input">
-        <img src="placeholder.jpg" class="avatar">
-    </label>
-
-    <input id="file-input" type="file"/>
-</div>
 <div class ="col-sm-7" ></div>
 <div class ="col-sm-4" style = "margin:2px;border-radius:10px;">
 <h3 align="left" style="background-color:white;padding:2px;margin:3px;border-radius:10px" >  UserId : <% out.print(uname);%></h3>
