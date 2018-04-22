@@ -46,27 +46,64 @@ body  {
  
     
 }
+input[type=submit] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+
+input[type=text] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+
 </style>
 <head>
 <meta charset="ISO-8859-1">
 <title>telephone billing system</title>
 </head>
-                    <body>
-             <h1 align="center"><font color="red">WELCOME TO CALL RATE ENTRY </font></h1>
-<form name="call_rates1" action="call_rates.jsp" method="get" onsubmit="return check()">
-<pre>
-                                                     call_id     <input type="text" name="call_id" required><br>
-                                                     Local       <input type="text" name="local" required><br>
-                                                     STD         <input type="text" name="Std"required><br>
-                                                     ISD         <input type="text" name="Isd" required><br>
-                                                    MONTHLY RATE <input type="text" name="Isd" required><br>
-                                                                  <input type="submit" name="submit" value="SUBMIT">   <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
-                                                                   
-                                                                <input type="button" value="LOG OUT" onclick="window.location.href='http://localhost:8080/login/Admin1.jsp'" />   <strong><a href="forget_callid1.jsp" class="button">FORGET CALL_ID?</a>	</strong>
+ <body>
+ <h1 align="center"><font color="red">WELCOME TO CALL RATE ENTRY </font></h1>
  
-             	                        	               
-                          
-           </pre>           
+<form name="call_rates1" action="call_rates.jsp" method="post" onsubmit="return check()">
+
+<pre>
+                                                                 <label for="call_id"> CALL ID:</label>
+                                                                 <input type="text" name="call_id" required>
+                                                                 <label for="local">LOCAL: </label>
+                                                                 <input type="text" name="local" required>
+                                                                 <label for="Std">STD:</label>
+                                                                 <input type="text" name="Std"required>
+                                                                 <label for="Isd">ISD:</label>
+                                                                 <input type="text" name="Isd" required>
+                                                                 <label for="month_rate">MONTHLY RATE:</label>
+                                                                 <input type="text" name="month_rate" required>
+                                                                 <input type="submit" name="submit" value="SUBMIT">   <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
+                                                                 <input type="button" value="LOG OUT" onclick="window.location.href='http://localhost:8080/login/Admin1.jsp'" />   <strong><a href="forget_callid1.jsp" class="button">FORGET CALL_ID?</a>	</strong>
+
+
+           </pre>         
 </form>
 
 

@@ -32,6 +32,38 @@ body  {
     background-image: url("m1.jpg");
     background-color: #cccccc;
 }
+  input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+
+input[type=submit] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+input[type=password] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+
 </style>
 
 <title>Reset password</title>
@@ -43,14 +75,13 @@ body  {
 <p align="center">
 
 <pre>
-
-                                                 Old Password <input type="password" name="password1" required>
-                                          
-                                                 New Password <input type="password" name="newpassword" required>
-                                                 
-                                                 ConfPassword <input type="password" name="confpassword" required>
-
-					                     <input type="submit" name="submit" value="INSERT">      <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
+                                                              <label for="password1">OLD PASSWORD:</label>
+                                                              <input type="password" name="password1" required>
+                                                              <label for="newpassword">NEW PASSWORD:</label>
+                                                              <input type="password" name="newpassword" required>
+                                                              <label for="confpassword">CONFIRM PASSWORD:</label>
+                                                              <input type="password" name="confpassword" required>
+                                                              <input type="submit" name="submit" >      <input type="button" value="CANCEL" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
              	                     
 					                             
 					                             

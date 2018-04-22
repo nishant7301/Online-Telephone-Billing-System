@@ -5,9 +5,19 @@
 <head>
 <style type="text/css">
 body{
-	background-image: url("m1.jpg");
+	background-image: url("hd1.jpg");
     background-color: #cccccc;
 	
+}
+ input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: green;
+    color: white;
+    
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -17,29 +27,27 @@ body{
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%
+String mobnum=null;
 String uname=request.getParameter("uname"); 
 String password=request.getParameter("password"); 
 String confpassword=request.getParameter("confpassword"); 
 String email=request.getParameter("email");
-String mobnum=request.getParameter("mnumber"); 
 Class.forName("com.mysql.jdbc.Driver"); 
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/nishant?autoReconnect=true&useSSL=false",
 "root","root"); 
 Statement st= con.createStatement();  
 ResultSet rs=st.executeQuery("select * from registration where uname='"+uname+"'");
 if(rs.next()){
-	out.println("username already exists");
+	out.println("USER NAME ALREADY EXISTS");
 }
 else{
 st.executeUpdate("insert into registration values('"+uname+"','"+password+"',0,1 ,'"+email+"','"+mobnum+"')"); /* here lab.test is lab(project_name) and test(project_table_name) */
 
-out.println("Registered\n"); 
-String url="http://localhost:8080/login/Login1.jsp";
-response.sendRedirect(url);
+out.println("Registeration successful\n"); 
 }
-
 %>
-<a href="Login1.jsp">Login page</a>
-
+<center>
+<input type="button" value="CANCEL" onclick="window.location.href='http://localhost:8080/login/home.jsp'" />			
+<input type="button" value="LOGIN" onclick="window.location.href='http://localhost:8080/login/Login1.jsp'" />	</center>		
 </body>
 </html>

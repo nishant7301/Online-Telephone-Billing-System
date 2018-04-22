@@ -4,6 +4,23 @@
 <html>
 <head>
 <style type="text/css">
+body{
+	background-image: url("hd1.jpg");
+    background-color: #cccccc;
+	
+}
+ input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: green;
+    color: white;
+    
+}
+
+
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>online telephone  login page</title>
@@ -48,10 +65,10 @@ else
 %>
 <br></br>
 
-<form> <input type="button" value="HOME" onclick="window.location.href='http://localhost:8080/login/home.jsp'" /> </form> 
+ <input type="button" value="HOME" onclick="window.location.href='http://localhost:8080/login/home.jsp'" />  
 
 <br></br>
-<form> <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/Login1.jsp'" /> </form> 
+ <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/Login1.jsp'" /> 
 <br>
 <br>
 </body>

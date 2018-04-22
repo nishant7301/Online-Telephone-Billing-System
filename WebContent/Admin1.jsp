@@ -143,6 +143,10 @@ body  {
     color: white;
     
 }
+.label
+{
+color:green;
+}
 </style>
 </head>
 <body>
@@ -159,11 +163,11 @@ body  {
 <p>
 <pre>                          
 
-                                                                    <label for="uname">User Name:</label><i class="fa fa-user" aria-hidden="true"></i>
+                                                                <font color=black>   <label for="uname"><b>User Name:</b></label><i class="fa fa-user" aria-hidden="true"></i>
                                                                     <input type="text" id="fname" name="uname" required>
-                                                                    <label for="password">PASSWORD:</label><i class="fa fa-lock"></i>
+                                                                    <label for="password"><b>PASSWORD:</b></label><i class="fa fa-lock"></i>
                                                                     <input type="password" id1="password" name="password" id="myInput" required> <input type="checkbox" onclick="myFunction()">Show Password						
-		                                                                       
+		                                                                       </font> 
 		                                                               <input type="submit" name="submit" value="SUBMIT">
 						                                                 
 						                                            <strong> FORGET PASSWORD?<a href="forget1.jsp" class="button">Click Here</a>	</strong>

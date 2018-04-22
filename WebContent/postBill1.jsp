@@ -93,7 +93,7 @@ input[type=text] {
                                                                 <input type="text" id="bnum" name="bnum" required>
                                                                 <label for="password">CARD NUMBER:</label>
                                                                 <input type="password" name="cardno" required >
-                                                                <input type="submit" name="submit" value="SUBMIT">          <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> 
+                                                                <input type="submit" name="submit" value="SUBMIT">          <input type="button" value="CANCEL" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> 
                 
                                                                 <%
                                                                 HttpSession ses=request.getSession(false);  

@@ -11,6 +11,17 @@ body{
 background-image:url("m1.jpg");
 
 }
+  input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: green;
+    color: white;
+    
+}
+
 </style>
 <body>
 <p>

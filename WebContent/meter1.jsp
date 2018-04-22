@@ -42,6 +42,57 @@ body  {
     background-image: url("m1.jpg");
     background-color: #cccccc;
 }
+  input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: green;
+    color: white;
+    
+}
+input[type=text] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+input[type=date] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+input[type=submit] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+input[type=reset] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+
 </style>
 
 <head>
@@ -51,21 +102,20 @@ body  {
 <h1 align="center"><font color="RED">WELCOME TO CALL METER ENTERY </font></h1>
 <form name="Meter1"  action="Meter.jsp" method="post" onSubmit=" return checkForm()">
 <p align="center">
-<pre>
-           PHONE NUMBER: <input type="text" name="pno" required>          <input type="button" value="USER DETAIL" onclick="window.location.href='http://localhost:8080/login/user.jsp'" />	                        	           
-                          			         
-           LOCAL CALL    <input type="text" name="local" required>
-              
-           STD CALL      <input type="text" name="Std" required>
-                
-           ISD CALL      <input type="text" name="Isd" required>
-                
-           DATE          <input type="date" name="date" required>
-                				
-	   
-		         <input type="submit" name="submit" value="SUBMIT">   <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
-                 
-                         <input type="button" value="LOG OUT" onclick="window.location.href='http://localhost:8080/login/Admin1.jsp'" />
+<pre>            
+                                                 <label for="pno">PHONE NUMBER:</label>
+                                                 <input type="text" name="pno" required>          <input type="button" value="USER DETAIL" onclick="window.location.href='http://localhost:8080/login/user.jsp'" />	                        	           
+                                                 <label for="local">LOCAL CALL:</label>			         
+                                                 <input type="text" name="local" required>
+                                                 <label for="std">STD CALL:</label>
+                                                 <input type="text" name="Std" required>
+                                                 <label for="Isd">ISD CALL:</label>
+                                                 <input type="text" name="Isd" required>
+                                                 <label for="date">DATE:</label>
+                                                 <input type="date" name="date" required>
+                	                         <input type="submit" name="submit" value="SUBMIT">   <input type="reset" value="Reset">  
+                	                         <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
+                                                 <input type="button" value="Log Out" onclick="window.location.href='http://localhost:8080/login/Admin1.jsp'" />
               	                        	           
                   
 		                                         

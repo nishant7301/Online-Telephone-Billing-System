@@ -1,6 +1,11 @@
 <html>
 <meta charset="ISO-8859-1">
 <title>User Page</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 function f()
 {
@@ -96,10 +101,26 @@ function myFunction() {
 </script>
   <style>
 body  {
-    background-image: url("m1.jpg");
+    background-image: url("hd1.jpg");
     background-color: #cccccc;
+     height: 165%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 input[type=text] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+input[type=date] {
     width: 25%;
     padding: 10px 18px;
     margin: 8px 0;
@@ -140,47 +161,45 @@ input[type=text] {
     color: white;
     
 }
-input[type=date] {
+input[type=reset] {
     width: 10%;
     padding: 10px 18px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    background-color: red;
+    background-color: RED;
     color: white;
     
 }
 </style>
-
-
 <body>
 <marquee style="background:RED" behavior="alternate"><h2>WELCOME TO NEW CONNECTION</h2></marquee>
 <form name="customer_record1" action="customer_record.jsp "method="post" onsubmit="return f()">
  <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" /> <h3 align="center">ADD NEW CONNECTION HERE:-</h3>
 <pre>	                                                                            
-                                                                                   <label for="pno">PHONE NUMBER:</label>
+                                                                                   <label for="pno">PHONE NUMBER </label><i class="fa fa-mobile" aria-hidden="true"></i>
                                                                                    <input type="text" name="pno" required>											
-                                                                                   <label for="cname">CUSTOMER NAME:</label>
+                                                                                   <label for="cname">CUSTOMER NAME </label> <i class="fa fa-user" aria-hidden="true"></i>
                                                                                    <input type="text" name="cname" required>
                                                                                    <label for="occupation">OCCUPATION:</label>
                                                                                    <input type="text" name="occupation" required>
-                                                                                   <label for="address">ADDRESS:</label>
+                                                                                   <label for="address">ADDRESS:</label><i class="fa fa-address-card" aria-hidden="true"></i>
                                                                                    <input type="text" name="address" required>
-                                                                                   <label for="pin">PIN:</label>
+                                                                                   <label for="pin">PIN:</label><i class="fa fa-map-marker"></i>
                                                                                    <input type="text" name="pin" required>
                                                                                    <label for="baccount">BANK ACCOUNT:</label>
                                                                                    <input type="text" name="baccount" required>
-                                                                                   <label for="cardno">CARD NUMBER:</label>
+                                                                                   <label for="cardno">CARD NUMBER:</label><i class="fa fa-credit-card" aria-hidden="true"></i>
                                                                                    <input type="password" name="cardno" id="myInput" required>  <input type="checkbox" onclick="myFunction()">Show card Number			
-	                                                                           <label for="amount">AMOUNT:</label>
+	                                                                           <label for="amount">AMOUNT:</label><i class="fa fa-money" aria-hidden="true"></i>
 	                                                                           <input type="text" name="amount" required>
-	                                                                           <label for="date">CONNECTION DATE:</label>
+	                                                                           <label for="date">CONNECTION DATE:</label><i class="fas fa-calendar-alt"></i>
 	                                                                           <input type="date" name="date" required> 
-	                                                                           <label for="date">DATE BIRTH:</label>
+	                                                                           <label for="date">DATE BIRTH:</label><i class="fas fa-calendar-alt" aria-hidden="true"></i>
 	                                                                           <input type="date" name="dob" required>
 	                                                                           <label for="m">GENDER:</label>
 	                                                                           <input type="radio" name="m" value="Male" checked> Male  <input type="radio" name="m" value="Female"/>Female  
-					                                           <input type="submit" name="submit" value="SUBMIT">  <button type="reset" value="Reset">Reset</button>
+					                                           <input type="submit" name="submit" value="SUBMIT">  <input type="reset" value="Reset">
 					                                                                           
 		             <%
 		 HttpSession ses=request.getSession(false);  

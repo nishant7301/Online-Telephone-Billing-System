@@ -12,9 +12,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style>
-table,th,td{
-padding
+  input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: green;
+    color: white;
+    
 }
+
 </style>
 <%@ page import="java.sql.*"%>
 	<%@ page import="javax.sql.*"%>

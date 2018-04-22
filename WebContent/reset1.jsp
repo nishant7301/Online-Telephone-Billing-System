@@ -28,8 +28,14 @@ if(!(document.reset1.password.value==document.reset1.confpassword.value))
 </script>
 <style type="text/css">
 body  {
-    background-image: url("m1.jpg");
+    background-image: url("hd1.jpg");
     background-color: #cccccc;
+     height: 50%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 input[type=password] {
     width: 25%;

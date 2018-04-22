@@ -42,8 +42,14 @@ if(!(document.profile.baccount.value.length==11))
 	</script>
 	<style type="text/css">
 body  {
-    background-image: url("m1.jpg");
+    background-image: url("hd1.jpg");
     background-color: #cccccc;
+     height: 50%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 input[type=text] {
     width: 25%;
@@ -113,7 +119,7 @@ input[type=reset] {
 			                                      <input type="text" name="pin" required>
 		                                              <label for="baccount">BANK ACCOUNT:</label>
 		                                              <input type="text" name="baccount" required>
-		                                               <input type="submit" name="submit">  <button type="reset" value="Reset">RESET</button> 
+		                                               <input type="submit" name="submit">  <input type="reset" value="Reset"> 
                                                                <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/index1.jsp'" />  
                          
 </pre>

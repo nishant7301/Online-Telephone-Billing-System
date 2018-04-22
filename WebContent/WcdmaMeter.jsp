@@ -34,6 +34,48 @@ body  {
     background-image: url("m1.jpg");
     background-color: #cccccc;
 }
+input[type=text] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+
+
+  input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+input[type=submit] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+input[type=date] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
 
 </style>
 <head>
@@ -44,13 +86,13 @@ body  {
 <form name="WcdmaMeter"  action="WcdmaMeter1.jsp" method="post" onSubmit=" return f1()">
 <p align="center">
 <pre>
-                                                                 PHONE NUMBER <input type="text" name="pno" required> 
-                
-                                                            WCDMA USAGE IN KB <input type="text" name="Wcdma_Usage" required> 
-                              
-                                                                      DATE    <input type="date" name="date" required>                      
-         
-                                                                              <input type="submit" name="submit" value="SUBMIT">   <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
+                                                                 <label for="pno">PHONE NUMBER:</label>
+                                                                 <input type="text" name="pno" required> 
+                                                                 <label for="Wcdma_Usage">WCDMA USAGE IN KB:</label>
+                                                                 <input type="text" name="Wcdma_Usage" required> 
+                                                                 <label for="date">DATE:</label>
+                                                                 <input type="date" name="date" required>                      
+                                                                 <input type="submit" name="submit" value="SUBMIT">   <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
                                                 	           
                           			  
                     

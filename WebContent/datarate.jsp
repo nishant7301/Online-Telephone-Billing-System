@@ -21,8 +21,14 @@ function f1()
 </head>
 <style>
 body  {
-    background-image: url("m1.jpg");
+    background-image: url("hd1.jpg");
     background-color: #cccccc;
+     height: 50%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
   .button {
     background-color: #4CAF50;
@@ -38,22 +44,52 @@ body  {
  
     
 }
+  input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+
+input[type=submit] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: RED;
+    color: white;
+    
+}
+input[type=text] {
+    width: 25%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: grey;
+    color: white;
+    
+}
+
 </style>
 <body>
-<h1 align="center">WLCCOME TO DATA RATE ENTERY </h1>
+<h1 align="center">WLCCOME TO DATA RATE ENTRY </h1>
 <form name="DataRate"  action="Datarate1.jsp" method="post" onSubmit=" return f1()">
 <p align="center">
 <pre>
-
-                                                                        DATA ID    :   <input type="text" name="data_id" required>                    
-         
-                                                                        GSM RATE   :   <input type="text" name="Gsm_rate" required>Paise/KB
-                                       
-                                                                        WCDMA RATE :   <input type="text" name="Wcdma_rate" required>Paise/KB
-                              
-                                                                                       <input type="submit" name="submit" value="SUBMIT">   <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
-                                                	           
-                          			                                                   <strong><a href="forget_callid1.jsp" class="button">FORGET DATA_ID?</a>	</strong>
+                                                                           <label for="data_id">DATA ID:</label>
+                                                                           <input type="text" name="data_id" required>                    
+                                                                           <label for="Gsm_rate">GSM RATE:</label>
+                                                                           <input type="text" name="Gsm_rate" required>Paise/KB
+                                                                           <label for="Wcdma_rate">WCDMA RATE</label>
+                                                                           <input type="text" name="Wcdma_rate" required>Paise/KB
+                                                                           <input type="submit" name="submit" value="SUBMIT">   <input type="button" value="BACK" onclick="window.location.href='http://localhost:8080/login/link.jsp'" />
+                                                	                           <strong><a href="forget_callid1.jsp" class="button">FORGET DATA_ID?</a>	</strong>
                     
                     </pre>
                    

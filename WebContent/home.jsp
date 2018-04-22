@@ -3,12 +3,11 @@
 <head>
   <title>telephone billing home </title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
   <style>
   .container-fluid {
@@ -62,19 +61,20 @@
   background-color: #4CAF50;
   color: white;
 }
-.brand-quote
-{
-color:#fff;
-font-family:'Patua One',cursive;
-font-size:50px;
-padding-center:20px;
-}
 body
 {
-background-image:url("pay1.jpg");
+background-image:url("online3.jpg");
+ background-color: #cccccc;
+     height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
   </style>
 </head>
+
 <body>
 <div class="topnav">
   <a class="active" href="home.jsp">Home</a>
@@ -83,12 +83,17 @@ background-image:url("pay1.jpg");
   <a href="Admin1.jsp">Admin Login</a>
   <a href="about.jsp">About</a>
 </div>
+
 <h1 align="center"><font color="red">Online Telephone Billing System</font></h1>
-<div class="row">
+<div class="container-fluid bg-1 text-center">
+ <i class="fa fa-users" style="font-size:60px;color:red" aria-hidden="true"><a href="user.html">User</a> </i>
+ <i class="fa fa-user-circle-o" style="font-size:50px;color:green"><a href="Admin1.jsp">Admin</a></i>
+ </div>>
+ <div class="container-fluid bg-1 text-center">    
+    <div class="col-sm-4"> 
+      <p>This software is  protected by copyright laws</p>
+    </div>
 </div>
-<div class="row"></div>
-  <h5 align="center">
-  <i class="fa fa-user-circle-o" style="font-size:50px;color:red"><a href="user.html">User</a></i>  <i class="fa fa-user-circle-o" style="font-size:50px;color:green"><a href="Admin1.jsp">Admin</a></i>
- </h5>
+
 </body>
 </html>

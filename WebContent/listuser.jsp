@@ -23,7 +23,18 @@ body  {
     font-size: 10px;
     margin: 3px 1.5px;
     cursor: pointer;
-}  
+}
+  input[type=button] {
+    width: 10%;
+    padding: 10px 18px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: green;
+    color: white;
+    
+}
+  
 </style>
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
